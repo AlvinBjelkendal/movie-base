@@ -1,0 +1,7 @@
+{
+  "name": "moviebase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
