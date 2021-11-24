@@ -19,10 +19,10 @@ const MyNavBar = () => {
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-        <Route exact path="/tab1">
+        <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/moviecard">
+          <Route exact path="/">
             <MovieCard />
           </Route>
           <Route path="/tab3">
@@ -38,7 +38,7 @@ const MyNavBar = () => {
             <IonIcon icon={person} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="moviecard" href="/moviecard" className="tabButton">
+          <IonTabButton tab="" href="/" className="tabButton">
             <IonIcon icon={person} />
             <IonLabel>Trending</IonLabel>
           </IonTabButton>
