@@ -11,9 +11,8 @@ import { person } from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import Tab1 from "../pages/Tab1";
-import Tab2 from "../pages/Tab2";
-import Tab3 from "../pages/Tab3";
+import Home from "./Home";
+import MovieCard from "./MovieCard";
 
 const MyNavBar = () => {
   return (
@@ -21,13 +20,13 @@ const MyNavBar = () => {
       <IonTabs>
         <IonRouterOutlet>
         <Route exact path="/tab1">
-            <Tab1 />
+            <Home />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/moviecard">
+            <MovieCard />
           </Route>
           <Route path="/tab3">
-            <Tab3 />
+
           </Route>
           <Route exact path="/">
             <Redirect to="/tab1" />
@@ -39,7 +38,7 @@ const MyNavBar = () => {
             <IonIcon icon={person} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="trending" href="/trending" className="tabButton">
+          <IonTabButton tab="moviecard" href="/moviecard" className="tabButton">
             <IonIcon icon={person} />
             <IonLabel>Trending</IonLabel>
           </IonTabButton>
