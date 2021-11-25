@@ -5,7 +5,6 @@ import { img_300 } from "../config/config";
 
 const MovieCard = (props) => {
   return (
-   
       <IonCard className="movie-card">
         <img src={`${img_300}/${props.poster}`} alt="poster" />
         <IonCardHeader className="movie-card-header">

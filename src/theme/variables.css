@@ -241,7 +241,6 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .movie-card {
-  width: 25%;
   max-width: 300px;
 }
 
@@ -261,4 +260,7 @@ http://ionicframework.com/docs/theming/ */
 .movie-card-rating {
   font-size: 14px;
   margin-right: 5px;
+}
+
+.slide {
 }
