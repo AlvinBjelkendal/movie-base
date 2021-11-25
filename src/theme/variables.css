@@ -76,7 +76,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-tint: #f5f6f9;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
@@ -233,4 +233,32 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
+
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.movie-card {
+  width: 25%;
+  max-width: 300px;
+}
+
+.movie-card-header {
+  height: 60px;
+}
+
+.movie-card-title {
+  font-size: 14px;
+  margin-top: 5px;
+  overflow: hidden;
+  height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie-card-rating {
+  font-size: 14px;
+  margin-right: 5px;
 }

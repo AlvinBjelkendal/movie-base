@@ -29,7 +29,7 @@ const MyNavBar = () => {
 
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/home" />
           </Route>
         </IonRouterOutlet>
         {/*-- Tab bar --*/}
@@ -38,7 +38,7 @@ const MyNavBar = () => {
             <IonIcon icon={person} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="" href="/" className="tabButton">
+          <IonTabButton tab="" href="/trending" className="tabButton">
             <IonIcon icon={person} />
             <IonLabel>Trending</IonLabel>
           </IonTabButton>
