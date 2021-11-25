@@ -34,15 +34,15 @@ const MyNavBar = () => {
         </IonRouterOutlet>
         {/*-- Tab bar --*/}
         <IonTabBar slot="bottom" className="tabBar">
-          <IonTabButton tab="home" href="/home" className="tabButton">
+          <IonTabButton tab="home" href="/home" className="nav-button">
             <IonIcon icon={person} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="" href="/trending" className="tabButton">
+          <IonTabButton tab="" href="/trending" className="nav-button">
             <IonIcon icon={person} />
             <IonLabel>Trending</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="categories" href="/categories" className="tabButton">
+          <IonTabButton tab="categories" href="/categories" className="nav-button">
             <IonIcon icon={person} />
             <IonLabel>Categories</IonLabel>
           </IonTabButton>
