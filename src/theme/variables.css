@@ -1,8 +1,12 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
 /** Ionic CSS Variables **/
 :root {
+  --ion-font-family: "Quicksand", sans-serif;
+  
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -263,4 +267,15 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .slide {
+  margin-top: 3rem;
 }
+
+.header {
+  background: red;
+}
+
+.header-title {
+  text-align: center;
+  letter-spacing: 3px;
+}
+

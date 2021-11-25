@@ -21,10 +21,12 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import MyNavBar from './components/MyNavBar';
+import Header from './components/Header';
 
 const App: React.FC = () => (
   <IonApp>
-    <MyNavBar></MyNavBar>
+    <Header />
+    <MyNavBar />
   </IonApp>
 );
 

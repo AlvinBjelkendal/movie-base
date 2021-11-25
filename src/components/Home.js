@@ -9,10 +9,7 @@ import MovieSlider from "./MovieSlider";
 const Home = () => {
 
   return (
-    <IonContent>
       <MovieSlider category = {trendingday} />
-      
-    </IonContent>
   )
 };
 
