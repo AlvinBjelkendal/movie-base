@@ -2,40 +2,33 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { IonContent } from "@ionic/react";
 import MovieCard from "./MovieCard";
+import useFetch from "./useFetch";
+import { trendingday } from "../config/config";
 
 const Home = () => {
-  const [trending, setTrending] = useState([])
+  const { responseData: trending, error, isLoading } = useFetch(`${trendingday}`)
 
-  useEffect(() => {
-    fetchTrending()
-  })
-
-  async function fetchTrending() {
-    await axios
-      .get(`https://api.themoviedb.org/3/trending/all/day`, {
-        headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
-      })
-      .then((response) => {
-        setTrending(response.data.results)
-      })
-      .catch((error) => {
-
-      });
-  }
   return (
     <IonContent>
-      <div className="trending">
-        {
-          trending && trending.map((t) => (
-            <MovieCard key={t.id} id={t.id}
-              title={t.title || t.name}
-              poster={t.poster_path}
-              media_type={t.media_type}
-              rating={t.vote_average}
-            />
-          ))
-        }
-      </div>
+      {error && <div>{error}</div>}
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+
+        <div className="trending">
+          {
+            trending && trending.results.map((t) => (
+              <MovieCard key={t.id} id={t.id}
+                title={t.title || t.name}
+                poster={t.poster_path}
+                media_type={t.media_type}
+                rating={t.vote_average}
+              />
+            ))
+          }
+        </div>
+      )
+      }
     </IonContent>
   )
 };
