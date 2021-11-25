@@ -7,11 +7,11 @@ import { trendingday } from "../config/config";
 import MovieSlider from "./MovieSlider";
 
 const Home = () => {
-  const { responseData: trending, error, isLoading } = useFetch(`${trendingday}`)
 
   return (
     <IonContent>
-      <MovieSlider />
+      <MovieSlider category = {trendingday} />
+      
     </IonContent>
   )
 };

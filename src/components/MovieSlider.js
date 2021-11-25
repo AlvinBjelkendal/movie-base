@@ -9,7 +9,7 @@ import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const MovieSlider = (props) => {
-  const { responseData: trending, error, isLoading } = useFetch(`${trendingday}`)
+  const { responseData: trending, error, isLoading } = useFetch(`${props.category}`)
 
   return (
       <IonContent>
