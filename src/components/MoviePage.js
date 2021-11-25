@@ -7,15 +7,13 @@ import MovieTrailer from "./MovieTrailer";
 
 const MoviePage = () => {
   const [showModal, setShowModal] = useState(false);
-  const {id} = useParams();
+  const { id } = useParams();
   const { responseData: movie, error, isLoading } = useFetch(`${specificMovie}${id}`);
+  console.log(movie);
   return (
     <IonContent>
-      {error && <div>{error}</div>}
-      <IonModal>
       <IonTitle>{movie.title}</IonTitle>
-      <MovieTrailer movie = {movie} />
-      </IonModal>
+      <MovieTrailer movie={movie} />
     </IonContent>
   )
 };

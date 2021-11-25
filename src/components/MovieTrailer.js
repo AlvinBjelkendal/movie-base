@@ -3,19 +3,25 @@ import { specificMovie, youtubeUrl } from "../config/config";
 import { useParams } from "react-router";
 import ReactPlayer from 'react-player'
 import { IonContent } from "@ionic/react";
+import { useEffect, useState } from "react";
 
-const MovieTrailer = ({movie}) => {
-  const { responseData: trailer, error, isLoading } = useFetch(`${specificMovie}${movie.id}/videos`);
+const MovieTrailer = () => {
+  const { id } = useParams();
+  const { responseData: trailer, error, isLoading } = useFetch(`${specificMovie}${id}/videos`);
 
-  console.log(movie.id)
+  console.log(trailer)
   return (
     <IonContent>
       {error && <div>{error}</div>}
-      <ReactPlayer
-        url={youtubeUrl + trailer.video.key}
-        playing
-        width="100%"
-      ></ReactPlayer>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <ReactPlayer
+          url={youtubeUrl + trailer.results[0].key}
+          playing
+          width="100%"
+        ></ReactPlayer>
+      )}
     </IonContent>
   )
 };
