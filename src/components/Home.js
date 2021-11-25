@@ -3,13 +3,18 @@ import axios from "axios";
 import { IonContent } from "@ionic/react";
 import MovieCard from "./MovieCard";
 import useFetch from "./useFetch";
-import { trendingToday } from "../config/config";
+import { trendingToday, trendingWeek } from "../config/config";
 import MovieSlider from "./MovieSlider";
 
 const Home = () => {
 
   return (
-      <MovieSlider category = {trendingToday} />
+    <IonContent>
+      <MovieSlider title={"Trending Today"} category={trendingToday} />
+      <MovieSlider title={"Trending This Week"} category={trendingWeek} />
+      <MovieSlider title={"Trending Today"} category={trendingToday} />
+
+    </IonContent>
   )
 };
 

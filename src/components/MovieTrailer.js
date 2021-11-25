@@ -18,7 +18,6 @@ const MovieTrailer = () => {
       ) : (
         <ReactPlayer
           url={youtubeUrl + trailer.results[0].key}
-          playing
           width="100%"
         ></ReactPlayer>
       )}

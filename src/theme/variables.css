@@ -237,6 +237,7 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
+  
 
 }
 
@@ -270,8 +271,17 @@ http://ionicframework.com/docs/theming/ */
   text-decoration: none;
 }
 
-.slide {
-  margin-top: 3rem;
+.movie-modal {
+  text-align: center;
+  --width: 70%;
+  --height: 70%;
+}
+
+
+
+.slider-title {
+  margin-top: 5rem;
+  margin-left: 8px;
 }
 
 .header {
@@ -286,3 +296,4 @@ http://ionicframework.com/docs/theming/ */
 .nav-button {
   --color-selected: var(--ion-color-warning);
 }
+
