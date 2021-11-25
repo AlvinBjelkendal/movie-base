@@ -271,16 +271,16 @@ http://ionicframework.com/docs/theming/ */
   text-decoration: none;
 }
 
-.movie-modal {
-  text-align: center;
-  --width: 70%;
-  --height: 70%;
+
+.movie-page-details {
+  margin-left: 10px;
 }
 
-
+.movie-page-poster {
+  width: 100px;
+}
 
 .slider-title {
-  margin-top: 5rem;
   margin-left: 8px;
 }
 
@@ -296,4 +296,5 @@ http://ionicframework.com/docs/theming/ */
 .nav-button {
   --color-selected: var(--ion-color-warning);
 }
+
 

@@ -11,7 +11,7 @@ const MovieTrailer = () => {
 
   console.log(trailer)
   return (
-    <IonContent>
+    <div>
       {error && <div>{error}</div>}
       {isLoading ? (
         <div>Loading...</div>
@@ -21,7 +21,7 @@ const MovieTrailer = () => {
           width="100%"
         ></ReactPlayer>
       )}
-    </IonContent>
+    </div>
   )
 };
 export default MovieTrailer;
