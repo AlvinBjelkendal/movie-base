@@ -27,7 +27,7 @@ const MyNavBar = () => {
           <Route path="/tab3">
 
           </Route>
-          <Route exact path="/movie/:id">
+          <Route exact path="/movie/:id/">
             <MoviePage />
           </Route>
           <Route exact path="/">
