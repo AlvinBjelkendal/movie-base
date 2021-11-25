@@ -7,9 +7,10 @@ import MovieCard from './MovieCard';
 
 import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
+import { Link } from 'react-router-dom';
 
 const MovieSlider = (props) => {
-  const { responseData: trending, error, isLoading } = useFetch(`${props.category}`)
+  const { responseData: movies, error, isLoading } = useFetch(`${props.category}`)
 
   return (
       <IonContent>
@@ -20,15 +21,17 @@ const MovieSlider = (props) => {
           <Swiper slidesPerView={4}>
             <div className="trending">
               {
-                trending && trending.results.map((t) => (
+                movies && movies.results.map((m) => (
+        
                   <SwiperSlide className="slide">
-                    <MovieCard key={t.id} id={t.id}
-                      title={t.title || t.name}
-                      poster={t.poster_path}
-                      media_type={t.media_type}
-                      rating={t.vote_average}
+                    <MovieCard key={m.id} id={m.id}
+                      title={m.title || m.name}
+                      poster={m.poster_path}
+                      media_type={m.media_type}
+                      rating={m.vote_average}
                     />
                   </SwiperSlide>
+                  
                 ))
               }
             </div>

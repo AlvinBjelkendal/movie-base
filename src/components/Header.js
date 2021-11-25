@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <IonHeader>
       <IonToolbar className="header">
-      <IonTitle color="warning" className="header-title">MOVIEBASE</IonTitle>
+      <IonTitle  className="header-title">MOVIEBASE</IonTitle>
       </IonToolbar>
     </IonHeader>
   );

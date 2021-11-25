@@ -2,10 +2,12 @@ import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, 
 import { star } from "ionicons/icons";
 import { useState } from "react";
 import { img_300 } from "../config/config";
+import { Link } from "react-router-dom";
 
 const MovieCard = (props) => {
   return (
-      <IonCard className="movie-card">
+    <IonCard className="movie-card">
+        <Link className="movie-link" to={`/movie/${props.id}`}>
         <img src={`${img_300}/${props.poster}`} alt="poster" />
         <IonCardHeader className="movie-card-header">
            <IonCardSubtitle color="warning" className="movie-card-rating">
@@ -16,6 +18,7 @@ const MovieCard = (props) => {
          </IonCardHeader>
         <IonCardContent>
         </IonCardContent>
+      </Link>
       </IonCard>
   )
 };

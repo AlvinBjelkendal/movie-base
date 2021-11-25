@@ -266,6 +266,10 @@ http://ionicframework.com/docs/theming/ */
   margin-right: 5px;
 }
 
+.movie-link {
+  text-decoration: none;
+}
+
 .slide {
   margin-top: 3rem;
 }

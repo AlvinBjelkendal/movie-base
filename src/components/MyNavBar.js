@@ -13,20 +13,22 @@ import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import Home from "./Home";
 import MovieCard from "./MovieCard";
+import MoviePage from "./MoviePage";
 
 const MyNavBar = () => {
   return (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-        <Route exact path="/home">
+          <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/">
-            <MovieCard />
-          </Route>
+
           <Route path="/tab3">
 
+          </Route>
+          <Route exact path="/movie/:id">
+            <MoviePage />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
