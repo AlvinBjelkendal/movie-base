@@ -195,6 +195,10 @@ http://ionicframework.com/docs/theming/ */
     --ion-toolbar-border-color: var(--ion-color-step-250);
   }
 
+  ion-chip {
+    padding: 0;
+  }
+
 
   /*
    * Material Design Dark Theme
@@ -284,8 +288,15 @@ http://ionicframework.com/docs/theming/ */
 
 .movie-page-overview {
   display: flex;
-  align-items: center;
   margin-top: 15px;
+}
+
+.movie-page-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 160px;
+  vertical-align: top;
+  scroll-behavior: auto;
 }
 
 .movie-page-actors {
@@ -293,8 +304,17 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .actor-chip {
-  size: 20px;
+  width: 10rem;
   font-size: small;
+}
+
+.actor-image::part(image) {
+  border-radius: 50%;
+  width: 30px;
+  display: flex !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
 }
 
 .slider-title {

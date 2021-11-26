@@ -1,5 +1,5 @@
 import { img_300 } from "../config/config";
-import { IonImg, IonText, IonChip } from "@ionic/react";
+import { IonImg, IonText, IonChip, IonLabel, IonIcon } from "@ionic/react";
 import useFetch from "./useFetch";
 import { useParams } from "react-router";
 import { specificMovie } from "../config/config";
@@ -18,12 +18,15 @@ const MoviePageDetails = (props) => {
   const displayTopActors = () => {
     return (
       <div className="movie-page-actors">
-        <IonText>Cast</IonText> 
-        <Swiper slidesPerView={3}>
+        <IonText>Cast</IonText>
+        <Swiper slidesPerView={4}>
           {
             credits && credits.cast.map((actor) => (
               <SwiperSlide>
-                <IonChip outline={true} color="white" className="actor-chip">{actor.name}</IonChip>
+                <IonChip outline={true} color="white">
+                <IonImg class="actor-image" src={`${img_300}/${actor.profile_path}`} alt="img"></IonImg>
+                  <IonLabel className="actor-chip">{actor.name}</IonLabel>
+                </IonChip>
               </SwiperSlide>
             ))
           }
@@ -42,7 +45,7 @@ const MoviePageDetails = (props) => {
           <IonText>{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
           <div className="movie-page-overview">
             <img className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
-            <IonText>{props.overview}</IonText>
+            <IonText className="movie-page-text">{props.overview}</IonText>
           </div>
           {displayTopActors()}
         </div>
