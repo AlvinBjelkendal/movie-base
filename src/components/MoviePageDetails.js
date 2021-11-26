@@ -1,5 +1,5 @@
 import { img_300 } from "../config/config";
-import { IonText, IonChip, IonLabel, IonButton, IonPopover, IonIcon } from "@ionic/react";
+import { IonText, IonChip, IonLabel, IonButton, IonPopover, IonIcon, IonTitle, IonCardTitle } from "@ionic/react";
 import useFetch from "./useFetch";
 import { useParams } from "react-router";
 import { specificMovie } from "../config/config";
@@ -49,7 +49,7 @@ const MoviePageDetails = (props) => {
       ) : (
         <div className="movie-page-details">
           {displayFullText()}
-          <h3>{props.title}</h3>
+          <h4 className="move-page-title">{props.title}</h4>
           <div className="movie-page-date-runtime-genres">
             <IonText className="date-runtime">{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
             <div className="movie-page-genres">

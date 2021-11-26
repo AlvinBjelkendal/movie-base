@@ -252,8 +252,12 @@ http://ionicframework.com/docs/theming/ */
   max-width: 300px;
 }
 
+.movie-slider {
+  margin-left: 100px;
+}
+
 .movie-card-header {
-  height: 60px;
+  height: 50px;
   text-align: start !important;
 }
 
@@ -263,17 +267,21 @@ http://ionicframework.com/docs/theming/ */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: capitalize;
 }
 
 .movie-card-rating {
   font-size: 14px;
-  margin-right: 5px;
+  
 }
 
 .movie-link {
   text-decoration: none;
 }
 
+.test {
+  height: 50px;
+}
 
 .movie-page-details {
   margin-left: 10px;
@@ -290,13 +298,16 @@ http://ionicframework.com/docs/theming/ */
 .genre-chip {
   float: right;
   font-size: 12px;
-  height: 20px;
-  border-radius: 15%;
+  height: 25px;
+  border-radius: 10%;
   justify-content: center !important;
 }
 
 .genre-chip-name {
-  padding: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .date-runtime {
