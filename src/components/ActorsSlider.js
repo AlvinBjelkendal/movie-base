@@ -2,11 +2,11 @@ import { avatarPlaceholder, img_300 } from "../config/config";
 import { IonImg, IonText, IonChip, IonLabel } from "@ionic/react";
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
-const MoviePageActors = (props) => {
+const ActorsSlider = (props) => {
   return (
     <div className="movie-page-actors">
       <IonText>Cast</IonText>
-      <Swiper slidesPerView={4}>
+      <Swiper slidesPerView={3.5}>
         {
           props && props.cast.map((actor) => (
             <SwiperSlide>
@@ -25,4 +25,4 @@ const MoviePageActors = (props) => {
     </div>
   )
 };
-export default MoviePageActors;
+export default ActorsSlider;

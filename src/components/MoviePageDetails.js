@@ -4,9 +4,10 @@ import useFetch from "./useFetch";
 import { useParams } from "react-router";
 import { specificMovie } from "../config/config";
 import LoadingSpinner from "./LoadingSpinner";
-import MoviePageActors from "./MoviePageActors";
+import ActorsSlider from "./ActorsSlider";
 import { useState } from "react";
 import { closeOutline } from "ionicons/icons";
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
 const MoviePageDetails = (props) => {
   const { id } = useParams();
@@ -24,13 +25,17 @@ const MoviePageDetails = (props) => {
 
   const displayGenres = () => {
     return (
-      props.genres.map((genre) => (
-        <IonChip className="genre-chip" outline={true} color="white">
-          <IonLabel>
-            {genre.name}
-          </IonLabel>
-        </IonChip>
-      ))
+      <Swiper slidesPerView={2.5}>
+        {props.genres.map((genre) => (
+          <SwiperSlide>
+            <IonChip className="genre-chip" outline={true} color="white">
+              <IonLabel className="genre-chip-name">
+                {genre.name}
+              </IonLabel>
+            </IonChip>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     )
   }
 
@@ -71,7 +76,7 @@ const MoviePageDetails = (props) => {
             <IonText className="movie-page-text">{props.overview}</IonText>
           </div>
           <IonButton onClick={() => setShowModal(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
-          <MoviePageActors {...credits} />
+          <ActorsSlider {...credits} />
         </div>
       )}
     </div>

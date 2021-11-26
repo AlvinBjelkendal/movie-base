@@ -284,19 +284,23 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .movie-page-genres {
-  width: 80%;
-  margin-right: 1rem;
+  width: 60%;
 }
 
 .genre-chip {
   float: right;
   font-size: 12px;
   height: 20px;
-  width: 4rem;
+  border-radius: 15%;
   justify-content: center !important;
 }
 
+.genre-chip-name {
+  padding: 10px;
+}
+
 .date-runtime {
+  font-size: 14px;
   width: 200px;
 }
 

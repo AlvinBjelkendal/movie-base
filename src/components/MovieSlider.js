@@ -21,7 +21,7 @@ const MovieSlider = (props) => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <Swiper slidesPerView={4}>
+        <Swiper slidesPerView={2.5}>
           {
             movies && movies.results.map((m) => (
 

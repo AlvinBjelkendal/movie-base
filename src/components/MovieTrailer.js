@@ -10,7 +10,6 @@ const MovieTrailer = () => {
   const { id } = useParams();
   const { responseData: trailer, error, isLoading } = useFetch(`${specificMovie}${id}/videos`);
 
-  console.log(trailer)
   return (
     <div>
       {error && <div>{error}</div>}
@@ -20,11 +19,12 @@ const MovieTrailer = () => {
         <div>
           {trailer.length > 0 ? (
             <div></div>
-            ) : (
-              <ReactPlayer
-                url={youtubeUrl + trailer.results[0].key}
-                width="100%"
-              ></ReactPlayer>
+          ) : (
+            <ReactPlayer
+              url={youtubeUrl + trailer.results[0].key}
+              width="100%"
+              playing
+            ></ReactPlayer>
           )}
         </div>
       )}
