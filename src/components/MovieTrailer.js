@@ -17,12 +17,19 @@ const MovieTrailer = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <ReactPlayer
-          url={youtubeUrl + trailer.results[0].key}
-          width="100%"
-        ></ReactPlayer>
+        <div>
+          {trailer.length > 0 ? (
+            <div></div>
+            ) : (
+              <ReactPlayer
+                url={youtubeUrl + trailer.results[0].key}
+                width="100%"
+              ></ReactPlayer>
+          )}
+        </div>
       )}
     </div>
+
   )
 };
 export default MovieTrailer;
