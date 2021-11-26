@@ -297,10 +297,7 @@ http://ionicframework.com/docs/theming/ */
   --color-selected: var(--ion-color-warning);
 }
 
-.my-custom-c
-
-
 .isLoading {
-  color: white;
-  width: 20px;
+  --backdrop-opacity: 0.4;
+  --spinner-color: var(--ion-color-warning);
 }
