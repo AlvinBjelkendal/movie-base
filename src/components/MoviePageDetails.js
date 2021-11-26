@@ -11,7 +11,10 @@ const MoviePageDetails = (props) => {
     <div className="movie-page-details">
       <h3>{props.title}</h3>
       <p>{props.release_date + " " + displayRuntimeInHoursAndMin()}</p>
-      <IonImg className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></IonImg>
+      <div className="movie-page-overview">
+      <img className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
+      <p>{props.overview}</p>
+      </div>
     </div>
   )
 };
