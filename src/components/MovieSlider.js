@@ -25,7 +25,7 @@ const MovieSlider = (props) => {
           {
             movies && movies.results.map((m) => (
 
-              <SwiperSlide>
+              <SwiperSlide key={m.id}>
                 <MovieCard key={m.id} id={m.id}
                   title={m.title || m.name}
                   poster={m.poster_path}

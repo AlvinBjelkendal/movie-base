@@ -11,7 +11,12 @@ const MoviePageDetails = (props) => {
   const { responseData: credits, error, isLoading } = useFetch(`${specificMovie}${id}/credits`);
 
   const displayRuntimeInHoursAndMin = () => {
-    return (Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min')
+    return (
+      props.runtime % 60 === 0 ? (
+        Math.floor(props.runtime / 60) + 'h'
+      ) : (Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min'
+      )
+    )
   }
 
   const displayGenres = () => {
@@ -35,10 +40,10 @@ const MoviePageDetails = (props) => {
         <div className="movie-page-details">
           <h3>{props.title}</h3>
           <div className="movie-page-date-runtime-genres">
-          <IonText className="date-runtime">{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
-          <div className="movie-page-genres">
-          {displayGenres()}
-          </div>
+            <IonText className="date-runtime">{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
+            <div className="movie-page-genres">
+              {displayGenres()}
+            </div>
           </div>
           <div className="movie-page-overview">
             <img className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
