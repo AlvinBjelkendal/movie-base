@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import ReactPlayer from 'react-player'
 import { IonContent } from "@ionic/react";
 import { useEffect, useState } from "react";
+import LoadingSpinner from "./LoadingSpinner";
 
 const MovieTrailer = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const MovieTrailer = () => {
     <div>
       {error && <div>{error}</div>}
       {isLoading ? (
-        <div>Loading...</div>
+        <LoadingSpinner />
       ) : (
         <ReactPlayer
           url={youtubeUrl + trailer.results[0].key}

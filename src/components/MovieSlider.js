@@ -9,6 +9,7 @@ import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 import { Link } from 'react-router-dom';
 import MoviePage from './MoviePage';
+import LoadingSpinner from './LoadingSpinner';
 
 const MovieSlider = (props) => {
   const { responseData: movies, error, isLoading } = useFetch(`${props.category}`)
@@ -18,7 +19,7 @@ const MovieSlider = (props) => {
       <p className="slider-title">{props.title}</p>
       {error && <div>{error}</div>}
       {isLoading ? (
-        <div>Loading...</div>
+        <LoadingSpinner />
       ) : (
         <Swiper slidesPerView={4}>
           {

@@ -7,6 +7,7 @@ import MovieTrailer from "./MovieTrailer";
 import { closeOutline } from "ionicons/icons";
 import { img_300 } from "../config/config";
 import MoviePageDetails from "./MoviePageDetails";
+import LoadingSpinner from "./LoadingSpinner";
 
 const MoviePage = () => {
   const [showModal, setShowModal] = useState(true);
@@ -16,10 +17,15 @@ const MoviePage = () => {
 
   return (
     <IonContent className="movie-page">
-      <MovieTrailer {...movie} />
-      <MoviePageDetails {...movie} />
-    </IonContent>
-
+    {isLoading ? (
+      <LoadingSpinner />
+      ) : (
+        <div>
+          <MovieTrailer {...movie} />
+          <MoviePageDetails {...movie} />
+        </div>
+      )}
+      </IonContent>
   )
 };
 export default MoviePage;
