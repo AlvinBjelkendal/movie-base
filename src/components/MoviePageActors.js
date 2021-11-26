@@ -16,7 +16,7 @@ const MoviePageActors = (props) => {
                ) : (
               <IonImg class="actor-image" src={`${img_300}/${actor.profile_path}`} alt="img"></IonImg>
               )}
-                <IonLabel className="actor-chip">{actor.name}</IonLabel>
+                <IonLabel className="actor-name">{actor.name}</IonLabel>
               </IonChip>
             </SwiperSlide>
           ))

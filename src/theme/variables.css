@@ -296,38 +296,35 @@ http://ionicframework.com/docs/theming/ */
   text-overflow: ellipsis;
   max-height: 160px;
   vertical-align: top;
-  scroll-behavior: auto;
 }
 
 .movie-page-actors {
   margin-top: 10px;
 }
 
-.actor-chip {
+.actor-name {
   width: 10rem;
   font-size: small;
+}
+
+.genre-chip {
+  font-size: 12px;
+  height: 20px;
+  width: 4rem;
+  justify-content: center !important;
+}
+
+.movie-page-genres {
+  display: flex;
 }
 
 .actor-image::part(image) {
   border-radius: 50%;
   width: 30px;
-  display: flex !important;
-  text-align: left !important;
-  justify-content: flex-start !important;
-  align-items: flex-start !important;
 }
 
 .slider-title {
   margin-left: 8px;
-}
-
-.header {
-  background: red;
-}
-
-.header-title {
-  text-align: center;
-  letter-spacing: 3px;
 }
 
 .nav-button {
