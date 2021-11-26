@@ -2,7 +2,7 @@ import { img_300 } from "../config/config";
 import { IonText, IonChip, IonLabel, IonButton, IonPopover, IonIcon, IonTitle, IonCardTitle } from "@ionic/react";
 import useFetch from "./useFetch";
 import { useParams } from "react-router";
-import { specificMovie } from "../config/config";
+import { specific } from "../config/config";
 import LoadingSpinner from "./LoadingSpinner";
 import ActorsSlider from "./ActorsSlider";
 import GenresSlider from "./GenresSlider";
@@ -12,8 +12,9 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
 const MoviePageDetails = (props) => {
   const { id } = useParams();
+  const { type } = useParams();
   const [showModal, setShowModal] = useState(false);
-  const { responseData: credits, error, isLoading } = useFetch(`${specificMovie}${id}/credits`);
+  const { responseData: credits, error, isLoading } = useFetch(`${specific}${type}/${id}/credits`);
 
   const displayRuntimeInHoursAndMin = () => {
     return (
@@ -24,7 +25,7 @@ const MoviePageDetails = (props) => {
     )
   }
 
-  const displayFullText = () => {
+  const movieDescriptionPopover = () => {
     return (
       <IonPopover
         cssClass="movie-popover"
@@ -48,7 +49,7 @@ const MoviePageDetails = (props) => {
         <LoadingSpinner />
       ) : (
         <div className="movie-page-details">
-          {displayFullText()}
+          {movieDescriptionPopover()}
           <h4 className="move-page-title">{props.title}</h4>
           <div className="movie-page-date-runtime-genres">
             <IonText className="date-runtime">{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>

@@ -27,7 +27,7 @@ const MyNavBar = () => {
           <Route path="/tab3">
 
           </Route>
-          <Route exact path="/movie/:id/">
+          <Route exact path="/:type/:id/">
             <MoviePage />
           </Route>
           <Route exact path="/">
@@ -40,9 +40,9 @@ const MyNavBar = () => {
             <IonIcon icon={person} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="" href="/trending" className="nav-button">
+          <IonTabButton tab="" href="/tv" className="nav-button">
             <IonIcon icon={person} />
-            <IonLabel>Trending</IonLabel>
+            <IonLabel>TV-Shows</IonLabel>
           </IonTabButton>
           <IonTabButton tab="categories" href="/categories" className="nav-button">
             <IonIcon icon={person} />

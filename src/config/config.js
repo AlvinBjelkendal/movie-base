@@ -7,6 +7,8 @@ export const trendingWeek = "https://api.themoviedb.org/3/trending/movie/week"
 export const topRated = "https://api.themoviedb.org/3/movie/top_rated/"
 export const upcoming = "https://api.themoviedb.org/3/movie/upcoming/"
 
-export const specificMovie = "https://api.themoviedb.org/3/movie/"
+export const specific = "https://api.themoviedb.org/3/"
+
+export const popularTVShows = "https://api.themoviedb.org/3/tv/popular"
 
 export const youtubeUrl = "https://www.youtube.com/watch?v="

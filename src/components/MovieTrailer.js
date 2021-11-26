@@ -1,5 +1,5 @@
 import useFetch from "./useFetch";
-import { specificMovie, youtubeUrl } from "../config/config";
+import { specific, youtubeUrl } from "../config/config";
 import { useParams } from "react-router";
 import ReactPlayer from 'react-player'
 import { IonContent } from "@ionic/react";
@@ -8,7 +8,8 @@ import LoadingSpinner from "./LoadingSpinner";
 
 const MovieTrailer = () => {
   const { id } = useParams();
-  const { responseData: trailer, error, isLoading } = useFetch(`${specificMovie}${id}/videos`);
+  const { type } = useParams();
+  const { responseData: trailer, error, isLoading } = useFetch(`${specific}${type}/${id}/videos`);
 
   return (
     <div>
@@ -17,7 +18,7 @@ const MovieTrailer = () => {
         <LoadingSpinner />
       ) : (
         <div>
-          {trailer.length > 0 ? (
+          {trailer.length === 0 ? (
             <div></div>
           ) : (
             <ReactPlayer

@@ -14,6 +14,7 @@ import LoadingSpinner from './LoadingSpinner';
 const MovieSlider = (props) => {
   const { responseData: movies, error, isLoading } = useFetch(`${props.category}`)
 
+  console.log(movies);
   return (
     <div className="slide">
       <p className="slider-title">{props.title}</p>
@@ -31,6 +32,7 @@ const MovieSlider = (props) => {
                   poster={m.poster_path}
                   media_type={m.media_type}
                   rating={m.vote_average}
+                  type={props.type}
                 />
               </SwiperSlide>
 

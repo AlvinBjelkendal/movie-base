@@ -262,7 +262,7 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .movie-card-title {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
