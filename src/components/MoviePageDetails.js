@@ -16,30 +16,6 @@ const MoviePageDetails = (props) => {
     return (Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min')
   }
 
-  const displayTopActors = () => {
-    return (
-      <div className="movie-page-actors">
-        <IonText>Cast</IonText>
-        <Swiper slidesPerView={4}>
-          {
-            credits && credits.cast.map((actor) => (
-              <SwiperSlide>
-                <IonChip outline={true} color="white">
-                {actor.profile_path === null ? (
-                  <IonImg class="actor-image" src={avatarPlaceholder} alt="img"></IonImg>
-                 ) : (
-                <IonImg class="actor-image" src={`${img_300}/${actor.profile_path}`} alt="img"></IonImg>
-                )}
-                  <IonLabel className="actor-chip">{actor.name}</IonLabel>
-                </IonChip>
-              </SwiperSlide>
-            ))
-          }
-        </Swiper>
-      </div>
-    )
-  }
-
   return (
     <div>
       {isLoading ? (
