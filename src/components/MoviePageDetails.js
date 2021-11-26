@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import { specificMovie } from "../config/config";
 import LoadingSpinner from "./LoadingSpinner";
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+import MoviePageActors from "./MoviePageActors";
 
 const MoviePageDetails = (props) => {
   const { id } = useParams();
@@ -51,7 +52,7 @@ const MoviePageDetails = (props) => {
             <img className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
             <IonText className="movie-page-text">{props.overview}</IonText>
           </div>
-          {displayTopActors()}
+          <MoviePageActors {...credits} />
         </div>
       )}
     </div>
