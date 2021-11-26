@@ -319,8 +319,21 @@ http://ionicframework.com/docs/theming/ */
   vertical-align: top;
 }
 
+.movie-popover {
+  --backdrop-opacity: 0.9;
+  --box-shadow: 10px 1px 1px black ;  
+}
+
+.movie-popover-text {
+  padding: 20px;
+}
+
+.show-full-text {
+  float: right;
+}
+
 .movie-page-actors {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .actor-name {
