@@ -34,8 +34,12 @@ const MoviePageDetails = (props) => {
       ) : (
         <div className="movie-page-details">
           <h3>{props.title}</h3>
-          <IonText>{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
+          <div className="movie-page-date-runtime-genres">
+          <IonText className="date-runtime">{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
+          <div className="movie-page-genres">
           {displayGenres()}
+          </div>
+          </div>
           <div className="movie-page-overview">
             <img className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
             <IonText className="movie-page-text">{props.overview}</IonText>

@@ -279,6 +279,27 @@ http://ionicframework.com/docs/theming/ */
   margin-left: 10px;
 }
 
+.movie-page-date-runtime-genres {
+  display: flex;
+}
+
+.movie-page-genres {
+  width: 80%;
+  margin-right: 1rem;
+}
+
+.genre-chip {
+  float: right;
+  font-size: 12px;
+  height: 20px;
+  width: 4rem;
+  justify-content: center !important;
+}
+
+.date-runtime {
+  width: 200px;
+}
+
 .movie-page-poster {
   width: 100px;
   height: 100%;
@@ -307,16 +328,6 @@ http://ionicframework.com/docs/theming/ */
   font-size: small;
 }
 
-.genre-chip {
-  font-size: 12px;
-  height: 20px;
-  width: 4rem;
-  justify-content: center !important;
-}
-
-.movie-page-genres {
-  display: flex;
-}
 
 .actor-image::part(image) {
   border-radius: 50%;
