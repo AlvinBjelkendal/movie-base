@@ -11,7 +11,7 @@ import { person } from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import Home from "./Home";
+import MoviesHome from "./MoviesHome";
 import MovieCard from "./MovieCard";
 import MoviePage from "./MoviePage";
 
@@ -21,7 +21,7 @@ const MyNavBar = () => {
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/home">
-            <Home />
+            <MoviesHome />
           </Route>
 
           <Route path="/tab3">

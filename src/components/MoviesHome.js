@@ -6,7 +6,7 @@ import useFetch from "./useFetch";
 import { popularTVShows, topRated, trendingToday, trendingWeek, upcoming } from "../config/config";
 import MovieSlider from "./MovieSlider";
 
-const Home = () => {
+const MoviesHome = () => {
   return (
     <IonContent>
       <MovieSlider title={"Trending Today"} category={trendingToday} type="movie" />
@@ -17,4 +17,4 @@ const Home = () => {
   )
 };
 
-export default Home;
+export default MoviesHome;
