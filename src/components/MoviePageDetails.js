@@ -1,11 +1,12 @@
-import { avatarPlaceholder, img_300 } from "../config/config";
-import { IonImg, IonText, IonChip, IonLabel, IonIcon, IonBadge, IonButton, IonModal, IonPopover } from "@ionic/react";
+import { img_300 } from "../config/config";
+import { IonText, IonChip, IonLabel, IonButton, IonPopover, IonIcon } from "@ionic/react";
 import useFetch from "./useFetch";
 import { useParams } from "react-router";
 import { specificMovie } from "../config/config";
 import LoadingSpinner from "./LoadingSpinner";
 import MoviePageActors from "./MoviePageActors";
 import { useState } from "react";
+import { closeOutline } from "ionicons/icons";
 
 const MoviePageDetails = (props) => {
   const { id } = useParams();
@@ -35,11 +36,14 @@ const MoviePageDetails = (props) => {
 
   const displayFullText = () => {
     return (
-      <IonPopover cssClass="movie-popover"
+      <IonPopover
+        cssClass="movie-popover"
         isOpen={showModal}
-        swipeToClose={true}
-        backdropDismiss={true}
+        onDidDismiss={() => setShowModal(false)}
       >
+        <IonButton onClick={() => setShowModal(false)} className="close-popover" size="small" fill="clear">
+          <IonIcon icon={closeOutline}></IonIcon>
+        </IonButton>
         <div className="movie-popover-text">
           <IonText>{props.overview}</IonText>
         </div>

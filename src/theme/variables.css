@@ -321,7 +321,10 @@ http://ionicframework.com/docs/theming/ */
 
 .movie-popover {
   --backdrop-opacity: 0.9;
-  --box-shadow: 10px 1px 1px black ;  
+}
+
+.close-popover {
+  float: right;
 }
 
 .movie-popover-text {
