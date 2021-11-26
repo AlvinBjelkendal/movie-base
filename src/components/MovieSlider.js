@@ -20,7 +20,7 @@ const MovieSlider = (props) => {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <Swiper autoHeight={true} slidesPerView={4}>
+        <Swiper slidesPerView={4}>
           {
             movies && movies.results.map((m) => (
 

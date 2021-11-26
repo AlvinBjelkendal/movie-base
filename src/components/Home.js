@@ -13,7 +13,6 @@ const Home = () => {
       <MovieSlider title={"Trending Today"} category={trendingToday} />
       <MovieSlider title={"Trending This Week"} category={trendingWeek} />
       <MovieSlider title={"Trending Today"} category={trendingToday} />
-
     </IonContent>
   )
 };
