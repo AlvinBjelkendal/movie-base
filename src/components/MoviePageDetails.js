@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import { specificMovie } from "../config/config";
 import LoadingSpinner from "./LoadingSpinner";
 import ActorsSlider from "./ActorsSlider";
+import GenresSlider from "./GenresSlider";
 import { useState } from "react";
 import { closeOutline } from "ionicons/icons";
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
@@ -20,22 +21,6 @@ const MoviePageDetails = (props) => {
         Math.floor(props.runtime / 60) + 'h'
       ) : (Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min'
       )
-    )
-  }
-
-  const displayGenres = () => {
-    return (
-      <Swiper slidesPerView={2.5}>
-        {props.genres.map((genre) => (
-          <SwiperSlide>
-            <IonChip className="genre-chip" outline={true} color="white">
-              <IonLabel className="genre-chip-name">
-                {genre.name}
-              </IonLabel>
-            </IonChip>
-          </SwiperSlide>
-        ))}
-      </Swiper>
     )
   }
 
@@ -68,7 +53,7 @@ const MoviePageDetails = (props) => {
           <div className="movie-page-date-runtime-genres">
             <IonText className="date-runtime">{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
             <div className="movie-page-genres">
-              {displayGenres()}
+            {GenresSlider(props.genres)}
             </div>
           </div>
           <div className="movie-page-overview">
