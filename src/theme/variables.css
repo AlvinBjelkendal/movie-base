@@ -87,6 +87,7 @@ http://ionicframework.com/docs/theming/ */
    */
 
   body {
+    --ion-color-white: #ffffff;
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
@@ -284,6 +285,16 @@ http://ionicframework.com/docs/theming/ */
 .movie-page-overview {
   display: flex;
   align-items: center;
+  margin-top: 15px;
+}
+
+.movie-page-actors {
+  margin-top: 10px;
+}
+
+.actor-chip {
+  size: 20px;
+  font-size: small;
 }
 
 .slider-title {
