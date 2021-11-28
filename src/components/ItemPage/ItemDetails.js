@@ -1,9 +1,9 @@
-import { img_300 } from "../config/config";
+import { img_300 } from "../../config/config";
 import { IonText, IonChip, IonLabel, IonButton, IonPopover, IonIcon, IonTitle, IonCardTitle } from "@ionic/react";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 import { useParams } from "react-router";
-import { specific } from "../config/config";
-import LoadingSpinner from "./LoadingSpinner";
+import { specific } from "../../config/config";
+import LoadingSpinner from "../LoadingSpinner";
 import ActorsSlider from "./ActorsSlider";
 import GenresSlider from "./GenresSlider";
 import { useState } from "react";
@@ -28,14 +28,14 @@ const ItemDetails = (props) => {
   const movieDescriptionPopover = () => {
     return (
       <IonPopover
-        cssClass="movie-popover"
+        cssClass="item-page-popover"
         isOpen={showModal}
         onDidDismiss={() => setShowModal(false)}
       >
         <IonButton onClick={() => setShowModal(false)} className="close-popover" size="small" fill="clear">
           <IonIcon icon={closeOutline}></IonIcon>
         </IonButton>
-        <div className="movie-popover-text">
+        <div className="popover-text">
           <IonText>{props.overview}</IonText>
         </div>
       </IonPopover>
@@ -48,20 +48,20 @@ const ItemDetails = (props) => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <div className="movie-page-details">
+        <div className="item-page-details">
           {movieDescriptionPopover()}
-          <h4 className="move-page-title">{props.title}</h4>
-          <div className="movie-page-date-runtime-genres">
+          <h4 className="item-page-title">{props.title}</h4>
+          <div className="item-page-date-runtime-genres">
             <IonText className="date-runtime">{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
-            <div className="movie-page-genres">
+            <div className="item-page-genres">
             {GenresSlider(props.genres)}
             </div>
           </div>
           <IonIcon className="icon" icon={star} color="warning"></IonIcon>
             <IonText>{`${props.vote_average}/10`}</IonText>
-          <div className="movie-page-overview">
-            <img className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
-            <IonText className="movie-page-text">{props.overview}</IonText>
+          <div className="item-page-overview">
+            <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
+            <IonText className="item-page-text">{props.overview}</IonText>
           </div>
           <IonButton onClick={() => setShowModal(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
           <ActorsSlider {...credits} />

@@ -11,10 +11,10 @@ import { person, searchOutline, tvOutline, videocamOutline } from "ionicons/icon
 import { IonReactRouter } from "@ionic/react-router";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import MoviesHome from "./MoviesHome";
+import MoviesHome from "./HomePages/MoviesHome";
 import MovieCard from "./ItemCard";
-import ItemPage from "./ItemPage";
-import TvShowsHome from "./TvShowsHome";
+import ItemPage from "./ItemPage/ItemPage";
+import TvShowsHome from "./HomePages/TvShowsHome";
 
 const MyNavBar = () => {
   return (

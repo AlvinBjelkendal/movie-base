@@ -248,20 +248,16 @@ http://ionicframework.com/docs/theming/ */
   margin-right: 5px;
 }
 
-.movie-card {
+.item-card {
   max-width: 300px;
 }
 
-.movie-slider {
-  margin-left: 100px;
-}
-
-.movie-card-header {
+.item-card-header {
   height: 50px;
   text-align: start !important;
 }
 
-.movie-card-title {
+.item-card-title {
   font-size: 13px;
   margin-top: 5px;
   overflow: hidden;
@@ -270,12 +266,11 @@ http://ionicframework.com/docs/theming/ */
   text-transform: capitalize;
 }
 
-.movie-card-rating {
+.item-card-rating {
   font-size: 14px;
-  
 }
 
-.movie-link {
+.item-link {
   text-decoration: none;
 }
 
@@ -283,15 +278,15 @@ http://ionicframework.com/docs/theming/ */
   height: 50px;
 }
 
-.movie-page-details {
+.item-page-details {
   margin-left: 10px;
 }
 
-.movie-page-date-runtime-genres {
+.item-page-date-runtime-genres {
   display: flex;
 }
 
-.movie-page-genres {
+.item-page-genres {
   width: 60%;
 }
 
@@ -315,26 +310,26 @@ http://ionicframework.com/docs/theming/ */
   width: 200px;
 }
 
-.movie-page-poster {
+.item-page-poster {
   width: 100px;
   height: 100%;
   border-radius: 5%;
   margin-right: 20px;
 }
 
-.movie-page-overview {
+.item-page-overview {
   display: flex;
   margin-top: 15px;
 }
 
-.movie-page-text {
+.item-page-text {
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 160px;
   vertical-align: top;
 }
 
-.movie-popover {
+.item-page-popover {
   --backdrop-opacity: 0.9;
 }
 
@@ -342,7 +337,7 @@ http://ionicframework.com/docs/theming/ */
   float: right;
 }
 
-.movie-popover-text {
+.popover-text {
   padding: 20px;
 }
 
@@ -350,7 +345,7 @@ http://ionicframework.com/docs/theming/ */
   float: right;
 }
 
-.movie-page-actors {
+.item-page-actors {
   margin-top: 20px;
 }
 
@@ -358,7 +353,6 @@ http://ionicframework.com/docs/theming/ */
   width: 10rem;
   font-size: small;
 }
-
 
 .actor-image::part(image) {
   border-radius: 50%;

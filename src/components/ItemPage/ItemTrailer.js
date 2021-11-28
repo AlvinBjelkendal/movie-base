@@ -1,10 +1,10 @@
-import useFetch from "./useFetch";
-import { specific, youtubeUrl } from "../config/config";
+import useFetch from "../useFetch";
+import { specific, youtubeUrl } from "../../config/config";
 import { useParams } from "react-router";
 import ReactPlayer from 'react-player'
 import { IonContent } from "@ionic/react";
 import { useEffect, useState } from "react";
-import LoadingSpinner from "./LoadingSpinner";
+import LoadingSpinner from "../LoadingSpinner";
 
 const ItemTrailer = () => {
   const { id } = useParams();

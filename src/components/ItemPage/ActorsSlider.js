@@ -1,10 +1,10 @@
-import { avatarPlaceholder, img_300 } from "../config/config";
+import { avatarPlaceholder, img_300 } from "../../config/config";
 import { IonImg, IonText, IonChip, IonLabel } from "@ionic/react";
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
 const ActorsSlider = (props) => {
   return (
-    <div className="movie-page-actors">
+    <div className="item-page-actors">
       <IonText>Cast</IonText>
       <Swiper slidesPerView={3.5}>
         {

@@ -9,7 +9,7 @@ import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 import LoadingSpinner from './LoadingSpinner';
 
-const MovieSlider = (props) => {
+const ItemSlider = (props) => {
   const { responseData: movies, error, isLoading } = useFetch(`${props.category}`)
 
   console.log(movies);
@@ -41,4 +41,4 @@ const MovieSlider = (props) => {
     </div>
   );
 };
-export default MovieSlider;
+export default ItemSlider;
