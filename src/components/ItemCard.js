@@ -3,9 +3,9 @@ import { star } from "ionicons/icons";
 import { useState } from "react";
 import { img_300 } from "../config/config";
 import { Link } from "react-router-dom";
-import MoviePage from "./MoviePage";
+import ItemPage from "./ItemPage";
 
-const MovieCard = (props) => {
+const ItemCard = (props) => {
   return (
     <IonCard className="movie-card">
       <Link className="movie-link" to={`/${props.type}/${props.id}`}>
@@ -24,4 +24,4 @@ const MovieCard = (props) => {
   )
 };
 
-export default MovieCard;
+export default ItemCard;

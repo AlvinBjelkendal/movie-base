@@ -3,12 +3,10 @@ import { IonContent, IonPage } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import useFetch from './useFetch';
 import { trendingday } from '../config/config';
-import MovieCard from './MovieCard';
+import ItemCard from './ItemCard';
 
 import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
-import { Link } from 'react-router-dom';
-import MoviePage from './MoviePage';
 import LoadingSpinner from './LoadingSpinner';
 
 const MovieSlider = (props) => {
@@ -22,12 +20,12 @@ const MovieSlider = (props) => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <Swiper spaceBetween={-20} slidesPerView={2.5}>
+        <Swiper spaceBetween={-15} slidesPerView={2.5}>
           {
             movies && movies.results.map((m) => (
 
               <SwiperSlide key={m.id}>
-                <MovieCard key={m.id} id={m.id}
+                <ItemCard key={m.id} id={m.id}
                   title={m.title || m.name}
                   poster={m.poster_path}
                   media_type={m.media_type}

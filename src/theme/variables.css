@@ -377,3 +377,7 @@ http://ionicframework.com/docs/theming/ */
   --backdrop-opacity: 0.4;
   --spinner-color: var(--ion-color-warning);
 }
+
+.slider-title {
+  margin-left: 12px;
+}

@@ -7,13 +7,14 @@ import {
   IonLabel,
   IonRouterOutlet,
 } from "@ionic/react";
-import { person } from "ionicons/icons";
+import { person, searchOutline, tvOutline, videocamOutline } from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import MoviesHome from "./MoviesHome";
-import MovieCard from "./MovieCard";
-import MoviePage from "./MoviePage";
+import MovieCard from "./ItemCard";
+import ItemPage from "./ItemPage";
+import TvShowsHome from "./TvShowsHome";
 
 const MyNavBar = () => {
   return (
@@ -23,12 +24,11 @@ const MyNavBar = () => {
           <Route exact path="/home">
             <MoviesHome />
           </Route>
-
-          <Route path="/tab3">
-
+          <Route path="/tv">
+            <TvShowsHome />
           </Route>
           <Route exact path="/:type/:id/">
-            <MoviePage />
+            <ItemPage />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
@@ -37,16 +37,16 @@ const MyNavBar = () => {
         {/*-- Tab bar --*/}
         <IonTabBar slot="bottom" className="tabBar">
           <IonTabButton tab="home" href="/home" className="nav-button">
-            <IonIcon icon={person} />
-            <IonLabel>Home</IonLabel>
+            <IonIcon icon={videocamOutline} />
+            <IonLabel>Movies</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="" href="/tv" className="nav-button">
-            <IonIcon icon={person} />
+          <IonTabButton tab="tv" href="/tv" className="nav-button">
+            <IonIcon icon={tvOutline} />
             <IonLabel>TV-Shows</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="categories" href="/categories" className="nav-button">
-            <IonIcon icon={person} />
-            <IonLabel>Categories</IonLabel>
+          <IonTabButton tab="search" href="/search" className="nav-button">
+            <IonIcon icon={searchOutline} />
+            <IonLabel>Search</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

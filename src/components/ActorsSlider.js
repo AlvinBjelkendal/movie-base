@@ -9,7 +9,7 @@ const ActorsSlider = (props) => {
       <Swiper slidesPerView={3.5}>
         {
           props && props.cast.map((actor) => (
-            <SwiperSlide>
+            <SwiperSlide key={actor.id}>
               <IonChip outline={true} color="white">
               {actor.profile_path === null ? (
                 <IonImg class="actor-image" src={avatarPlaceholder} alt="img"></IonImg>

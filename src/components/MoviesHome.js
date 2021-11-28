@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { IonContent } from "@ionic/react";
-import MovieCard from "./MovieCard";
+import MovieCard from "./ItemCard";
 import useFetch from "./useFetch";
-import { popularTVShows, topRated, trendingToday, trendingWeek, upcoming } from "../config/config";
+import { popularMovies, topRated, trendingToday, trendingWeek, upcoming } from "../config/config";
 import MovieSlider from "./MovieSlider";
 
 const MoviesHome = () => {
   return (
     <IonContent>
       <MovieSlider title={"Trending Today"} category={trendingToday} type="movie" />
-      <MovieSlider title={"Popular"} category={popularTVShows} type="tv" />
+      <MovieSlider title={"Popular right now"} category={popularMovies} type="movie" />
       <MovieSlider title={"Top Rated"} category={topRated} type="movie" />
       <MovieSlider title={"Upcoming"} category={upcoming} type="movie" />
     </IonContent>

@@ -7,10 +7,10 @@ import LoadingSpinner from "./LoadingSpinner";
 import ActorsSlider from "./ActorsSlider";
 import GenresSlider from "./GenresSlider";
 import { useState } from "react";
-import { closeOutline } from "ionicons/icons";
+import { closeOutline, star } from "ionicons/icons";
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
-const MoviePageDetails = (props) => {
+const ItemDetails = (props) => {
   const { id } = useParams();
   const { type } = useParams();
   const [showModal, setShowModal] = useState(false);
@@ -57,6 +57,8 @@ const MoviePageDetails = (props) => {
             {GenresSlider(props.genres)}
             </div>
           </div>
+          <IonIcon className="icon" icon={star} color="warning"></IonIcon>
+            <IonText>{`${props.vote_average}/10`}</IonText>
           <div className="movie-page-overview">
             <img className="movie-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
             <IonText className="movie-page-text">{props.overview}</IonText>
@@ -68,4 +70,4 @@ const MoviePageDetails = (props) => {
     </div>
   )
 };
-export default MoviePageDetails;
+export default ItemDetails;

@@ -6,7 +6,7 @@ import { IonContent } from "@ionic/react";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
-const MovieTrailer = () => {
+const ItemTrailer = () => {
   const { id } = useParams();
   const { type } = useParams();
   const { responseData: trailer, error, isLoading } = useFetch(`${specific}${type}/${id}/videos`);
@@ -33,4 +33,4 @@ const MovieTrailer = () => {
 
   )
 };
-export default MovieTrailer;
+export default ItemTrailer;

@@ -1,15 +1,13 @@
-import { IonContent, IonIcon, IonImg, IonModal, IonTitle } from "@ionic/react";
+import { IonContent } from "@ionic/react";
 import { useState } from "react";
 import useFetch from "./useFetch";
 import { Link, useParams } from "react-router-dom";
 import { specific } from "../config/config";
-import MovieTrailer from "./MovieTrailer";
-import { closeOutline } from "ionicons/icons";
-import { img_300 } from "../config/config";
-import MoviePageDetails from "./MoviePageDetails";
 import LoadingSpinner from "./LoadingSpinner";
+import ItemTrailer from "./ItemTrailer";
+import ItemDetails from "./ItemDetails";
 
-const MoviePage = () => {
+const ItemPage = () => {
   const [showModal, setShowModal] = useState(true);
   const { id } = useParams();
   const { type } = useParams();
@@ -22,11 +20,11 @@ const MoviePage = () => {
       <LoadingSpinner />
       ) : (
         <div>
-          <MovieTrailer {...movie} />
-          <MoviePageDetails {...movie} />
+          <ItemTrailer {...movie} />
+          <ItemDetails {...movie} />
         </div>
       )}
       </IonContent>
   )
 };
-export default MoviePage;
+export default ItemPage;
