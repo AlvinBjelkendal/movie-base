@@ -278,21 +278,13 @@ http://ionicframework.com/docs/theming/ */
   height: 50px;
 }
 
-.item-page-details {
-  margin-left: 10px;
-}
-
-.item-page-date-runtime-genres {
-  display: flex;
-}
-
-.item-page-genres {
-  width: 60%;
+.item-page {
+  color: white;
 }
 
 .genre-chip {
-  float: right;
   font-size: 12px;
+  width: 75%;
   height: 25px;
   border-radius: 10%;
   justify-content: center !important;
@@ -317,11 +309,6 @@ http://ionicframework.com/docs/theming/ */
   margin-right: 20px;
 }
 
-.item-page-overview {
-  display: flex;
-  margin-top: 15px;
-}
-
 .item-page-text {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -343,6 +330,10 @@ http://ionicframework.com/docs/theming/ */
 
 .show-full-text {
   float: right;
+  z-index: 9999999999999;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
 }
 
 .item-page-actors {

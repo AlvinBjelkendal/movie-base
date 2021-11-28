@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player'
 import { IonContent } from "@ionic/react";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "../LoadingSpinner";
+import { BackButton } from "../BackButton";
 
 const ItemTrailer = () => {
   const { id } = useParams();
@@ -20,13 +21,13 @@ const ItemTrailer = () => {
         <div>
           {trailer.length === 0 ? (
             <div></div>
-          ) : (
-            <ReactPlayer
+            ) : (
+              <ReactPlayer
               url={youtubeUrl + trailer.results[0].key}
               width="100%"
               playing
-            ></ReactPlayer>
-          )}
+              ></ReactPlayer>
+              )}
         </div>
       )}
     </div>

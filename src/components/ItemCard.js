@@ -8,6 +8,7 @@ import ItemPage from "./ItemPage/ItemPage";
 const ItemCard = (props) => {
   return (
     <IonCard className="item-card">
+
       <Link className="item-link" to={`/${props.type}/${props.id}`}>
         <img src={`${img_300}/${props.poster}`} alt="poster" />
         <IonCardHeader className="item-card-header">

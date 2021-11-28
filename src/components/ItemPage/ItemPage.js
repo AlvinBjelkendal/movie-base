@@ -6,6 +6,7 @@ import { specific } from "../../config/config";
 import LoadingSpinner from "../LoadingSpinner";
 import ItemTrailer from "./ItemTrailer";
 import ItemDetails from "./ItemDetails";
+import { BackButton } from "../BackButton";
 
 const ItemPage = () => {
   const [showModal, setShowModal] = useState(true);
@@ -16,15 +17,16 @@ const ItemPage = () => {
 
   return (
     <IonContent className="item-page">
-    {isLoading ? (
-      <LoadingSpinner />
+      {error && <div>{error}</div>}
+      {isLoading ? (
+        <LoadingSpinner />
       ) : (
         <div>
           <ItemTrailer {...item} />
           <ItemDetails {...item} />
         </div>
       )}
-      </IonContent>
+    </IonContent>
   )
 };
 export default ItemPage;
