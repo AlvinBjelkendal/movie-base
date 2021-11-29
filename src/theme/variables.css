@@ -249,6 +249,10 @@ ion-toolbar {
   --background: body; 
 }
 
+ion-list-header {
+  font-size: 20px;
+}
+
 .icon {
   margin-right: 5px;
 }

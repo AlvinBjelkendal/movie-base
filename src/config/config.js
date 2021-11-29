@@ -10,6 +10,8 @@ export const upcoming = "https://api.themoviedb.org/3/movie/upcoming/"
 
 export const specific = "https://api.themoviedb.org/3/"
 
+export const category = "https://api.themoviedb.org/3/genre/"
+
 export const popularTVShows = "https://api.themoviedb.org/3/tv/popular"
 export const topRatedTVShows = "https://api.themoviedb.org/3/tv/top_rated"
 

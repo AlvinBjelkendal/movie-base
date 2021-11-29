@@ -7,7 +7,7 @@ import {
   IonLabel,
   IonRouterOutlet,
 } from "@ionic/react";
-import { person, searchOutline, tvOutline, videocamOutline } from "ionicons/icons";
+import { filmOutline, person, searchOutline, tvOutline, videocamOutline } from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
@@ -15,7 +15,7 @@ import MoviesHome from "./MainPages/MoviesHome";
 import MovieCard from "./ItemCard";
 import ItemPage from "./ItemPage/ItemPage";
 import TvShowsHome from "./MainPages/TvShowsHome";
-import Search from "./Search";
+import Search from "./MainPages/Search";
 
 const MyNavBar = () => {
   return (
@@ -41,7 +41,7 @@ const MyNavBar = () => {
         {/*-- Tab bar --*/}
         <IonTabBar slot="bottom" className="tabBar">
           <IonTabButton tab="home" href="/home" className="nav-button">
-            <IonIcon icon={videocamOutline} />
+            <IonIcon icon={filmOutline} />
             <IonLabel>Movies</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tv" href="/tv" className="nav-button">
