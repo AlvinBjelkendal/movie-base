@@ -15,7 +15,7 @@ const ItemCard = (props) => {
           <IonCardSubtitle className="item-card-rating">
             <IonIcon className="icon" icon={star} color="warning"></IonIcon>
             <IonText>{props.vote_average}</IonText>
-            <IonCardTitle className="item-card-title">{props.title}</IonCardTitle>
+            <IonCardTitle className="item-card-title">{props.title || props.name}</IonCardTitle>
           </IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>

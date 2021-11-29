@@ -6,6 +6,7 @@ import ItemCard from './ItemCard';
 import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 import LoadingSpinner from './LoadingSpinner';
+import { IonHeader, IonTitle, IonToolbar } from '@ionic/react';
 
 const ItemSlider = (props) => {
 
@@ -41,7 +42,9 @@ const ItemSlider = (props) => {
 
   return (
     <div>
-      <p className="slider-title">{props.title}</p>
+      <IonToolbar>
+        <IonTitle>{props.title}</IonTitle>
+      </IonToolbar>
       <Swiper spaceBetween={-15} slidesPerView={2.5}>
         {props.titles === undefined & props.category !== undefined ? (FetchTitles()) : (recievedTitlesThroughProps())}
       </Swiper>

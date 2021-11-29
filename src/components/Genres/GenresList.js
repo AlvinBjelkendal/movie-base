@@ -1,8 +1,8 @@
 import { IonCardHeader, IonList, IonItem, IonItemGroup, IonIcon, IonLabel, IonListHeader, IonTitle, IonToolbar, IonContent } from "@ionic/react";
 import { chevronForwardOutline, filmOutline, map, tvOutline } from "ionicons/icons";
-import { category } from "../config/config";
-import useFetch from "./useFetch";
-import LoadingSpinner from "./LoadingSpinner";
+import { category } from "../../config/config";
+import useFetch from "../useFetch";
+import LoadingSpinner from "../LoadingSpinner";
 import { Link } from "react-router-dom";
 
 const GenresList = (props) => {
@@ -20,7 +20,7 @@ const GenresList = (props) => {
           ) : (
             <IonListHeader lines="inset">
               <IonIcon color="warning" className="icon" icon={tvOutline}></IonIcon>
-              Tv-Shows</IonListHeader>
+              TV-Shows</IonListHeader>
           )
 
           }

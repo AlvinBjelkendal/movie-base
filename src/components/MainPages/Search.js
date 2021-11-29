@@ -1,6 +1,6 @@
 import { IonHeader, IonTitle, IonToolbar, IonSearchbar, IonGrid, IonRow, IonCol, IonContent } from "@ionic/react";
 import { React, useState } from "react";
-import GenresList from "../GenresList";
+import GenresList from "../Genres/GenresList";
 
 const Search = () => {
   const [searchText, setSearchText] = useState('')

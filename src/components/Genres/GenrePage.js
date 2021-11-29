@@ -1,9 +1,9 @@
 import { useParams } from "react-router";
-import { discover, trendingToday } from "../config/config";
-import useFetch from "./useFetch";
+import { discover, trendingToday } from "../../config/config";
+import useFetch from "../useFetch";
 import { IonContent, IonTitle } from "@ionic/react";
-import ItemSlider from "./ItemSlider";
-import LoadingSpinner from "./LoadingSpinner";
+import ItemSlider from "../ItemSlider";
+import LoadingSpinner from "../LoadingSpinner";
 
 
 const GenrePage = () => {
@@ -19,7 +19,7 @@ const GenrePage = () => {
         <LoadingSpinner />
       ) : (
         <div>
-          <ItemSlider title={`Popular ${genre} titles`} titles={items.results} type="movie" />
+          <ItemSlider title={`Popular ${genre} titles`} titles={items.results} />
         </div>
       )}
     </IonContent>
