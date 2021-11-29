@@ -24,30 +24,30 @@ const ItemDetails = (props) => {
     )
   }
 
-   const movieDescriptionPopover = () => {
-     return (
-       <IonPopover
-         cssClass="item-page-popover"
-         isOpen={showPopover}
-         onDidDismiss={() => setShowPopover(false)}
-       >
-         <IonButton onClick={() => setShowPopover(false)} className="close-popover" size="small" fill="clear">
-           <IonIcon icon={closeOutline}></IonIcon>
-         </IonButton>
-         <div className="popover-text">
+  const movieDescriptionPopover = () => {
+    return (
+      <IonPopover
+        cssClass="item-page-popover"
+        isOpen={showPopover}
+        onDidDismiss={() => setShowPopover(false)}
+      >
+        <IonButton onClick={() => setShowPopover(false)} className="close-popover" size="small" fill="clear">
+          <IonIcon icon={closeOutline}></IonIcon>
+        </IonButton>
+        <div className="popover-text">
           <IonText>{props.overview}</IonText>
         </div>
-       </IonPopover>
-     )
-   }
+      </IonPopover>
+    )
+  }
 
   return (
     <div>
       {error && <div>{error}</div>}
       {isLoading ? (
         <LoadingSpinner />
-        ) : (
-          <div>
+      ) : (
+        <div>
           {movieDescriptionPopover()}
           <IonRow>
             <IonCol className="ion-align-items-start">
@@ -57,7 +57,9 @@ const ItemDetails = (props) => {
 
           <IonRow>
             <IonCol>
-              <IonText>{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>
+              {type === "movie" ? (<IonText>{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>) : (
+                <IonText>{props.number_of_seasons + " Seasons " + props.first_air_date.slice(0, 4) + " - " + props.last_air_date.slice(0, 4)} </IonText>
+              )}
             </IonCol>
             <IonCol size="6">
               {GenresSlider(props.genres)}
