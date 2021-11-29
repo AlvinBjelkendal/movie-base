@@ -1,4 +1,4 @@
-import { IonHeader, IonTitle, IonToolbar, IonSearchbar, IonGrid, IonRow, IonCol, IonContent } from "@ionic/react";
+import { IonHeader, IonToolbar, IonSearchbar, IonContent } from "@ionic/react";
 import { React, useState } from "react";
 import GenresList from "../Genres/GenresList";
 

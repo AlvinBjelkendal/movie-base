@@ -7,12 +7,11 @@ import {
   IonLabel,
   IonRouterOutlet,
 } from "@ionic/react";
-import { filmOutline, person, searchOutline, tvOutline, videocamOutline } from "ionicons/icons";
+import { filmOutline, searchOutline, tvOutline } from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import MoviesHome from "./MainPages/MoviesHome";
-import MovieCard from "./ItemCard";
 import ItemPage from "./ItemPage/ItemPage";
 import TvShowsHome from "./MainPages/TvShowsHome";
 import Search from "./MainPages/Search";

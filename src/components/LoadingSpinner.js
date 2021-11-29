@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { IonContent, IonLoading, } from "@ionic/react";
+import { IonLoading, } from "@ionic/react";
 
 const LoadingSpinner = () => {
   return (

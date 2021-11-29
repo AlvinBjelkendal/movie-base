@@ -6,7 +6,7 @@ import ItemCard from './ItemCard';
 import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 import LoadingSpinner from './LoadingSpinner';
-import { IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonTitle, IonToolbar } from '@ionic/react';
 
 const ItemSlider = (props) => {
 

@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { IonContent } from "@ionic/react";
-import MovieCard from "../ItemCard";
-import useFetch from "../useFetch";
-import { popularMovies, topRated, trendingToday, trendingWeek, upcoming } from "../../config/config";
+import { popularMovies, topRated, trendingToday, upcoming } from "../../config/config";
 import ItemSlider from "../ItemSlider";
 
 const MoviesHome = () => {

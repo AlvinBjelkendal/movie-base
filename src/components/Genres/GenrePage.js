@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
-import { discover, trendingToday } from "../../config/config";
+import { discover } from "../../config/config";
 import useFetch from "../useFetch";
-import { IonContent, IonTitle } from "@ionic/react";
+import { IonContent } from "@ionic/react";
 import ItemSlider from "../ItemSlider";
 import LoadingSpinner from "../LoadingSpinner";
 

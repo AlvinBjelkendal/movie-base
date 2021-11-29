@@ -1,5 +1,5 @@
 import { img_300 } from "../../config/config";
-import { IonText, IonRow, IonCol, IonChip, IonLabel, IonButton, IonPopover, IonIcon, IonTitle, IonCardTitle } from "@ionic/react";
+import { IonText, IonRow, IonCol, IonButton, IonPopover, IonIcon } from "@ionic/react";
 import useFetch from "../useFetch";
 import { useParams } from "react-router";
 import { specific } from "../../config/config";

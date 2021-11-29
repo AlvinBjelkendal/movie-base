@@ -1,6 +1,6 @@
 import { useHistory } from "react-router"
 import { IonButton, IonIcon } from "@ionic/react"
-import { arrowBackOutline, closeOutline } from "ionicons/icons"
+import { closeOutline } from "ionicons/icons"
 
 export const BackButton = () => {
   const history = useHistory()

@@ -1,5 +1,5 @@
-import { IonCardHeader, IonList, IonItem, IonCard, IonItemGroup, IonIcon, IonLabel, IonListHeader, IonTitle, IonToolbar, IonContent } from "@ionic/react";
-import { chevronForwardOutline, filmOutline, map, tvOutline } from "ionicons/icons";
+import { IonList, IonItem, IonIcon, IonLabel, IonListHeader } from "@ionic/react";
+import { chevronForwardOutline, filmOutline, tvOutline } from "ionicons/icons";
 import { category } from "../../config/config";
 import useFetch from "../useFetch";
 import LoadingSpinner from "../LoadingSpinner";

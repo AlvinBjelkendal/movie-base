@@ -1,5 +1,5 @@
 import { IonContent } from "@ionic/react";
-import { latestTVShows, popularTVShows, topRatedTVShows } from "../../config/config";
+import { popularTVShows, topRatedTVShows } from "../../config/config";
 import ItemSlider from "../ItemSlider";
 
 const TvShowsHome = () => {
