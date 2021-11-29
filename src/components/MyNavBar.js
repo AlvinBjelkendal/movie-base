@@ -15,6 +15,7 @@ import MoviesHome from "./MainPages/MoviesHome";
 import MovieCard from "./ItemCard";
 import ItemPage from "./ItemPage/ItemPage";
 import TvShowsHome from "./MainPages/TvShowsHome";
+import Search from "./Search";
 
 const MyNavBar = () => {
   return (
@@ -29,6 +30,9 @@ const MyNavBar = () => {
           </Route>
           <Route exact path="/:type/:id/">
             <ItemPage />
+          </Route>
+          <Route exact path="/search">
+            <Search />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />

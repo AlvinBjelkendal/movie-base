@@ -242,6 +242,11 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
+
+}
+
+ion-toolbar {
+  --background: body; 
 }
 
 .icon {
@@ -365,4 +370,8 @@ http://ionicframework.com/docs/theming/ */
 
 .slider-title {
   margin-left: 12px;
+}
+
+.searchbar {
+  --icon-color: var(--ion-color-warning);
 }
