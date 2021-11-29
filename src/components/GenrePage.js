@@ -1,8 +1,10 @@
 import { useParams } from "react-router";
 import { discover, trendingToday } from "../config/config";
 import useFetch from "./useFetch";
-import { IonContent } from "@ionic/react";
+import { IonContent, IonTitle } from "@ionic/react";
 import ItemSlider from "./ItemSlider";
+import LoadingSpinner from "./LoadingSpinner";
+
 
 const GenrePage = () => {
   const { type } = useParams();
@@ -12,7 +14,15 @@ const GenrePage = () => {
 
   return (
     <IonContent>
-      <ItemSlider title={"test"} category={trendingToday} titles={items.results} type="movie" />
+      {error && <div>{error}</div>}
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <div>
+          <IonTitle>{id}</IonTitle>
+          <ItemSlider title={"test"} titles={items.results} type="movie" />
+        </div>
+      )}
     </IonContent>
   )
 }; export default GenrePage

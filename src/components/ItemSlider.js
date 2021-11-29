@@ -60,7 +60,7 @@ const ItemSlider = (props) => {
   return (
     <Swiper spaceBetween={-15} slidesPerView={2.5}>
 
-      {props.titles === undefined ? (FetchTitles()) : (recievedTitlesThroughProps())}
+      {props.titles === undefined & props.category !== undefined ? (FetchTitles()) : (recievedTitlesThroughProps())}
 
     </Swiper>
   );
