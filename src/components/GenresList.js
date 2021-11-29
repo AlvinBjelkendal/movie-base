@@ -25,7 +25,7 @@ const GenresList = (props) => {
 
           }
           {genres.genres.map((genre) => (
-            <Link className="item-link" to={`/discover/${props.type}/genre/${genre.id}`}>
+            <Link className="item-link" to={`/${props.type}/genre/${genre.name}/${genre.id}`}>
               <IonItem>
                 <IonLabel>{genre.name}</IonLabel>
                 <IonIcon icon={chevronForwardOutline}></IonIcon>

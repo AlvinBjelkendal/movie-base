@@ -9,8 +9,8 @@ import LoadingSpinner from "./LoadingSpinner";
 const GenrePage = () => {
   const { type } = useParams();
   const { id } = useParams();
+  const { genre } = useParams();
   const { responseData: items, error, isLoading } = useFetch(`${discover}${type}?&with_genres=${id}`);
-  console.log(items.results);
 
   return (
     <IonContent>
@@ -19,8 +19,7 @@ const GenrePage = () => {
         <LoadingSpinner />
       ) : (
         <div>
-          <IonTitle>{id}</IonTitle>
-          <ItemSlider title={"test"} titles={items.results} type="movie" />
+          <ItemSlider title={`Popular ${genre} titles`} titles={items.results} type="movie" />
         </div>
       )}
     </IonContent>

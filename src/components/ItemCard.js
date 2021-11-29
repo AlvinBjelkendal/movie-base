@@ -10,11 +10,11 @@ const ItemCard = (props) => {
     <IonCard className="item-card">
 
       <Link className="item-link" to={`/${props.type}/${props.id}`}>
-        <img src={`${img_300}/${props.poster}`} alt="poster" />
+        <img src={`${img_300}/${props.poster_path}`} alt="poster" />
         <IonCardHeader className="item-card-header">
           <IonCardSubtitle className="item-card-rating">
             <IonIcon className="icon" icon={star} color="warning"></IonIcon>
-            <IonText>{props.rating}</IonText>
+            <IonText>{props.vote_average}</IonText>
             <IonCardTitle className="item-card-title">{props.title}</IonCardTitle>
           </IonCardSubtitle>
         </IonCardHeader>

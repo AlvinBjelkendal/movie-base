@@ -35,7 +35,7 @@ const MyNavBar = () => {
           <Route exact path="/search">
             <Search />
           </Route>
-          <Route exact path="/discover/:type/genre/:id">
+          <Route exact path="/:type/genre/:genre/:id">
             <GenrePage />
           </Route>
           <Route exact path="/">
