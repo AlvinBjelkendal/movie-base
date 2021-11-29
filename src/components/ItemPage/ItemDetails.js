@@ -80,7 +80,6 @@ const ItemDetails = (props) => {
               <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
             </IonCol>
           </IonRow>
-
           <IonRow>
             <IonCol>
               <ActorsSlider {...credits} />

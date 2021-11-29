@@ -10,35 +10,59 @@ import '@ionic/react/css/ionic-swiper.css';
 import LoadingSpinner from './LoadingSpinner';
 
 const ItemSlider = (props) => {
-  const { responseData: movies, error, isLoading } = useFetch(`${props.category}`)
 
-  console.log(movies);
+  const FetchTitles = () => {
+    const { responseData: items, error, isLoading } = useFetch(`${props.category}`)
+    return (
+      <div className="slide">
+        <p className="slider-title">{props.title}</p>
+        {error && <div>{error}</div>}
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          items && items.results.map((m) => (
+            <SwiperSlide key={m.id}>
+              <ItemCard key={m.id} id={m.id}
+                title={m.title || m.name}
+                poster={m.poster_path}
+                media_type={m.media_type}
+                rating={m.vote_average}
+                type={props.type}
+              />
+            </SwiperSlide>
+          ))
+        )}
+      </div>
+    )
+  }
+
+  const recievedTitlesThroughProps = () => {
+    return (
+      <div className="slide">
+        <p className="slider-title">{props.title}</p>
+
+        {props.titles && props.titles.map((m) => (
+          <SwiperSlide key={m.id}>
+            <ItemCard key={m.id} id={m.id}
+              title={m.title || m.name}
+              poster={m.poster_path}
+              media_type={m.media_type}
+              rating={m.vote_average}
+              type={props.type}
+            />
+          </SwiperSlide>
+        ))}
+
+      </div>
+    )
+  }
+
   return (
-    <div className="slide">
-      <p className="slider-title">{props.title}</p>
-      {error && <div>{error}</div>}
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <Swiper spaceBetween={-15} slidesPerView={2.5}>
-          {
-            movies && movies.results.map((m) => (
+    <Swiper spaceBetween={-15} slidesPerView={2.5}>
 
-              <SwiperSlide key={m.id}>
-                <ItemCard key={m.id} id={m.id}
-                  title={m.title || m.name}
-                  poster={m.poster_path}
-                  media_type={m.media_type}
-                  rating={m.vote_average}
-                  type={props.type}
-                />
-              </SwiperSlide>
+      {props.titles === undefined ? (FetchTitles()) : (recievedTitlesThroughProps())}
 
-            ))
-          }
-        </Swiper>
-      )}
-    </div>
+    </Swiper>
   );
 };
 export default ItemSlider;

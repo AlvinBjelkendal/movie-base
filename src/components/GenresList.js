@@ -3,10 +3,10 @@ import { chevronForwardOutline, filmOutline, map, tvOutline } from "ionicons/ico
 import { category } from "../config/config";
 import useFetch from "./useFetch";
 import LoadingSpinner from "./LoadingSpinner";
+import { Link } from "react-router-dom";
 
 const GenresList = (props) => {
   const { responseData: genres, error, isLoading } = useFetch(`${category}/${props.type}/list`);
-  console.log(genres);
 
   const categoryList = () => {
     return (
@@ -25,10 +25,12 @@ const GenresList = (props) => {
 
           }
           {genres.genres.map((genre) => (
-            <IonItem>
-              <IonLabel>{genre.name}</IonLabel>
-              <IonIcon icon={chevronForwardOutline}></IonIcon>
-            </IonItem>
+            <Link className="item-link" to={`/discover/${props.type}/genre/${genre.id}`}>
+              <IonItem>
+                <IonLabel>{genre.name}</IonLabel>
+                <IonIcon icon={chevronForwardOutline}></IonIcon>
+              </IonItem>
+            </Link>
           ))}
         </IonList>
       </div>
@@ -42,7 +44,6 @@ const GenresList = (props) => {
         <LoadingSpinner />
       ) : (
         <div>
-
           {categoryList()}
         </div>
 

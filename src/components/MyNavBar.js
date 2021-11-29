@@ -16,6 +16,7 @@ import MovieCard from "./ItemCard";
 import ItemPage from "./ItemPage/ItemPage";
 import TvShowsHome from "./MainPages/TvShowsHome";
 import Search from "./MainPages/Search";
+import GenrePage from "./GenrePage";
 
 const MyNavBar = () => {
   return (
@@ -33,6 +34,9 @@ const MyNavBar = () => {
           </Route>
           <Route exact path="/search">
             <Search />
+          </Route>
+          <Route exact path="/discover/:type/genre/:id">
+            <GenrePage />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />

@@ -12,6 +12,8 @@ export const specific = "https://api.themoviedb.org/3/"
 
 export const category = "https://api.themoviedb.org/3/genre/"
 
+export const discover = "https://api.themoviedb.org/3/discover/"
+
 export const popularTVShows = "https://api.themoviedb.org/3/tv/popular"
 export const topRatedTVShows = "https://api.themoviedb.org/3/tv/top_rated"
 
