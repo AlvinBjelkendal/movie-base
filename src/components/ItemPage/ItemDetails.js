@@ -12,7 +12,7 @@ import { closeOutline, star } from "ionicons/icons";
 const ItemDetails = (props) => {
   const { id } = useParams();
   const { type } = useParams();
-  const [showModal, setShowModal] = useState(false);
+  const [showPopover, setShowPopover] = useState(false);
   const { responseData: credits, error, isLoading } = useFetch(`${specific}${type}/${id}/credits`);
 
   const displayRuntimeInHoursAndMin = () => {
@@ -24,30 +24,30 @@ const ItemDetails = (props) => {
     )
   }
 
-  const movieDescriptionPopover = () => {
-    return (
-      <IonPopover
-        cssClass="item-page-popover"
-        isOpen={showModal}
-        onDidDismiss={() => setShowModal(false)}
-      >
-        <IonButton onClick={() => setShowModal(false)} className="close-popover" size="small" fill="clear">
-          <IonIcon icon={closeOutline}></IonIcon>
-        </IonButton>
-        <div className="popover-text">
+   const movieDescriptionPopover = () => {
+     return (
+       <IonPopover
+         cssClass="item-page-popover"
+         isOpen={showPopover}
+         onDidDismiss={() => setShowPopover(false)}
+       >
+         <IonButton onClick={() => setShowPopover(false)} className="close-popover" size="small" fill="clear">
+           <IonIcon icon={closeOutline}></IonIcon>
+         </IonButton>
+         <div className="popover-text">
           <IonText>{props.overview}</IonText>
         </div>
-      </IonPopover>
-    )
-  }
+       </IonPopover>
+     )
+   }
 
   return (
     <div>
       {error && <div>{error}</div>}
       {isLoading ? (
         <LoadingSpinner />
-      ) : (
-        <div>
+        ) : (
+          <div>
           {movieDescriptionPopover()}
           <IonRow>
             <IonCol className="ion-align-items-start">
@@ -77,7 +77,7 @@ const ItemDetails = (props) => {
             </IonCol>
             <IonCol size="9">
               <IonText className="item-page-text">{props.overview}</IonText>
-              <IonButton onClick={() => setShowModal(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
+              <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
             </IonCol>
           </IonRow>
 
