@@ -25,7 +25,9 @@ const ItemTrailer = () => {
                 null
               ) : (
                 <div>
-                  <BackButton className="trailer-back-button" />
+                  <div className="trailer-back-button">
+                    <BackButton />
+                  </div>
                   <ReactPlayer
                     url={youtubeUrl + trailer.results[0].key}
                     width="100%"

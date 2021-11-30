@@ -92,10 +92,18 @@ const ItemDetails = (props) => {
                   <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
                 </IonCol>
                 <IonCol size="8">
-                  <div className="item-page-description">
-                  <IonText className="item-page-description">{props.overview}</IonText>
-                  </div>
-                  <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show Description</IonButton>
+                  {props.overview ? (
+                    <div>
+                      <IonText className="item-page-description">{props.overview}</IonText>
+                      <IonButton
+                        onClick={() => setShowPopover(true)}
+                        fill="clear"
+                        size="small"
+                        className="show-full-text">Show Description</IonButton>
+                    </div>
+                  ) : (
+                    null
+                  )}
                 </IonCol>
               </IonRow>
               <IonRow>

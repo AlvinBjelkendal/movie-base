@@ -505,9 +505,10 @@ display: -webkit-box;
 
 .search-image {
   width: 40px;
-  border-radius: 5%;
+  border-radius: 5% !important;
   margin-right: 5px;
-  margin-bottom: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 .show-full-text {
@@ -526,11 +527,10 @@ display: -webkit-box;
 
 .back-button {
   left: 5px;
-  position: fixed;
 }
 
 .trailer-back-button {
-  
+  position: fixed; 
 }
 
 .popover-text {
@@ -543,7 +543,7 @@ display: -webkit-box;
 }
 
 .actor-image::part(image) {
-  border-radius: 50%;
+  border-radius: 50% !important;
   width: 30px;
 }
 

@@ -4,7 +4,7 @@ import GenresList from "../Genres/GenresList";
 import useFetch from "../useFetch";
 import LoadingSpinner from "../LoadingSpinner";
 import Error from "../Error";
-import { filmOutline, tvOutline } from "ionicons/icons";
+import { chevronForwardOutline, filmOutline, tvOutline } from "ionicons/icons";
 import { img_300, posterPlaceholder } from "../../config/config";
 import { Link } from "react-router-dom";
 
@@ -35,6 +35,7 @@ const Search = () => {
                         <IonImg alt="poster" className="search-image" src={`${img_300}/${title.poster_path}`}> </IonImg>
                       )}
                       <IonLabel>{title.title || title.name}</IonLabel>
+                      <IonIcon icon={chevronForwardOutline}></IonIcon>
                     </IonItem>
                   </Link>
                 ))}
@@ -70,6 +71,7 @@ const Search = () => {
                         <IonImg alt="poster" className="search-image" src={`${img_300}/${title.poster_path}`}> </IonImg>
                       )}
                       <IonLabel>{title.title || title.name}</IonLabel>
+                      <IonIcon icon={chevronForwardOutline}></IonIcon>
                     </IonItem>
                   </Link>
                 ))}

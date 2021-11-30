@@ -6,10 +6,7 @@ const LoadingSpinner = () => {
       spinner={"lines"}
       cssClass='isLoading'
       isOpen={true}
-      message={'Please wait...'}
       keyboardClose={false}
     ></IonLoading>
   )
-
-
 }; export default LoadingSpinner;
