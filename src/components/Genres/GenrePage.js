@@ -4,6 +4,7 @@ import useFetch from "../useFetch";
 import { IonContent } from "@ionic/react";
 import ItemSlider from "../ItemSlider";
 import LoadingSpinner from "../LoadingSpinner";
+import Error from "../Error";
 
 
 const GenrePage = () => {
@@ -11,10 +12,12 @@ const GenrePage = () => {
   const { id } = useParams();
   const { genre } = useParams();
   const { responseData: items, error, isLoading } = useFetch(`${discover}${type}?&with_genres=${id}`);
+  console.log(error);
+  
 
   return (
     <IonContent>
-      {error && <div>{error}</div>}
+      {error && console.log('fsaf')}
       {isLoading ? (
         <LoadingSpinner />
       ) : (

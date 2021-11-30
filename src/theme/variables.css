@@ -379,3 +379,10 @@ ion-list-header {
 .searchbar {
   --icon-color: var(--ion-color-warning);
 }
+
+.error {
+  justify-content: center;
+  text-align: center;
+  top: 50%;
+  bottom: 50%;
+}
