@@ -259,8 +259,6 @@ ion-list-header {
 
 .item-card {
   max-width: 300px;
-  min-height: 300px;
-  max-height: 300px;
 }
 
 .item-card-header {
