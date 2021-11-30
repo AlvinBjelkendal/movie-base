@@ -11,50 +11,50 @@ const Search = () => {
   const SearchForMovies = () => {
     const { responseData: movies, error, isLoading } = useFetch(`https://api.themoviedb.org/3/search/movie?&query=${searchText}`)
     return (
-      <IonContent>
+      <div>
         {error !== null ? (
           <Error />
         ) : (
-          <div>
-            {isLoading ? (
-              <LoadingSpinner />
+          <IonList>
+            {movies < 1 ? (
+              null
             ) : (
-              <IonList>
+              <div>
                 {movies.results.map((title) => (
                   <IonItem>
                     <IonLabel>{title.title || title.name}</IonLabel>
                   </IonItem>
                 ))}
-              </IonList>
+              </div>
             )}
-          </div>
+          </IonList>
         )}
-      </IonContent>
+      </div>
     )
   }
 
   const SearchForShows = () => {
     const { responseData: shows, error, isLoading } = useFetch(`https://api.themoviedb.org/3/search/tv?&query=${searchText}`)
     return (
-      <IonContent>
+      <div>
         {error !== null ? (
           <Error />
         ) : (
-          <div>
-            {isLoading ? (
-              <LoadingSpinner />
+          <IonList>
+            {shows < 1 ? (
+              null
             ) : (
-              <IonList>
+              <div>
                 {shows.results.map((title) => (
                   <IonItem>
                     <IonLabel>{title.title || title.name}</IonLabel>
                   </IonItem>
                 ))}
-              </IonList>
+              </div>
             )}
-          </div>
+          </IonList>
         )}
-      </IonContent>
+      </div>
     )
   }
 
@@ -71,8 +71,16 @@ const Search = () => {
               animated ></IonSearchbar>
           </IonToolbar>
         </IonHeader>
-        <GenresList type="movie" />
-        <GenresList type="tv" />
+        {!searchText.length ? (
+          <div>
+            <GenresList type="movie" />
+            <GenresList type="tv" />
+          </div>
+        ) : (
+          <div>
+            <SearchForMovies />
+            <SearchForShows />
+          </div>)}
       </div>
     </IonContent>
 
