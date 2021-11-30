@@ -1,4 +1,4 @@
-import { IonHeader, IonToolbar, IonSearchbar, IonContent, IonList, IonItem, IonLabel, IonPopover } from "@ionic/react";
+import { IonHeader, IonToolbar, IonSearchbar, IonContent, IonList, IonItem, IonLabel, IonPopover, IonLoading } from "@ionic/react";
 import { React, useEffect, useState } from "react";
 import GenresList from "../Genres/GenresList";
 import useFetch from "../useFetch";
@@ -17,11 +17,11 @@ const Search = () => {
         ) : (
           <IonList>
             {movies < 1 ? (
-              null
+              <LoadingSpinner />
             ) : (
               <div>
                 {movies.results.map((title) => (
-                  <IonItem>
+                  <IonItem key={title.id}>
                     <IonLabel>{title.title || title.name}</IonLabel>
                   </IonItem>
                 ))}
@@ -42,11 +42,11 @@ const Search = () => {
         ) : (
           <IonList>
             {shows < 1 ? (
-              null
+              <LoadingSpinner />
             ) : (
               <div>
                 {shows.results.map((title) => (
-                  <IonItem>
+                  <IonItem key={title.id}>
                     <IonLabel>{title.title || title.name}</IonLabel>
                   </IonItem>
                 ))}
@@ -71,7 +71,7 @@ const Search = () => {
               animated ></IonSearchbar>
           </IonToolbar>
         </IonHeader>
-        {!searchText.length ? (
+        {searchText.length < 3 ? (
           <div>
             <GenresList type="movie" />
             <GenresList type="tv" />

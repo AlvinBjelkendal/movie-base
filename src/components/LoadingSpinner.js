@@ -7,6 +7,7 @@ const LoadingSpinner = () => {
       cssClass='isLoading'
       isOpen={true}
       message={'Please wait...'}
+      keyboardClose={false}
     ></IonLoading>
   )
 
