@@ -7,8 +7,10 @@ import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 import LoadingSpinner from './LoadingSpinner';
 import { IonTitle, IonToolbar } from '@ionic/react';
+import { useParams } from 'react-router';
 
 const ItemSlider = (props) => {
+  const { type } = useParams()
 
   const FetchTitles = () => {
     const { responseData: items, error, isLoading } = useFetch(`${props.category}`)
@@ -33,7 +35,7 @@ const ItemSlider = (props) => {
       <div className="slide">
         {props.titles && props.titles.map((title) => (
           <SwiperSlide key={title.id}>
-            <ItemCard {...title} type={props.type} />
+            <ItemCard {...title} type={type} />
           </SwiperSlide>
         ))}
       </div>

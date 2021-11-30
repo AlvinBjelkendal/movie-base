@@ -1,13 +1,13 @@
 import { useHistory } from "react-router"
 import { IonButton, IonIcon } from "@ionic/react"
-import { closeOutline } from "ionicons/icons"
+import { chevronBackOutline, closeOutline } from "ionicons/icons"
 
 export const BackButton = () => {
   const history = useHistory()
 
   return (
-    <IonButton className="close-popover" size="small" fill="clear" onClick={() => history.goBack()}>
-      <IonIcon icon={closeOutline}  ></IonIcon>
+    <IonButton className="back-button" size="small" fill="clear" onClick={() => history.goBack()}>
+      <IonIcon icon={chevronBackOutline}  ></IonIcon>
     </IonButton>
   )
 }

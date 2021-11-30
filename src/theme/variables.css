@@ -320,11 +320,29 @@ ion-list-header {
   margin-right: 20px;
 }
 
-.item-page-text {
+.item-page-description {
   overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: 140px;
-  vertical-align: top;
+display: -webkit-box;
+-webkit-line-clamp: 8;
+-webkit-box-orient: vertical;
+}
+
+.container {
+  position: relative;
+}
+
+.test {
+  width: 100%;
+  position: absolute;
+}
+
+.button {
+  z-index: 5;
+}
+
+.show-full-text {
+  float: right;
+  margin-top: 5px;
 }
 
 .item-page-popover {
@@ -332,23 +350,17 @@ ion-list-header {
 }
 
 .close-popover {
-  float: right;
+  right: 5px;
+  position: fixed;
+}
+
+.back-button {
+  right: 5px;
+  position: fixed;
 }
 
 .popover-text {
   padding: 20px;
-}
-
-.show-full-text {
-  float: right;
-  z-index: 9999999999999;
-    position: absolute;
-    bottom: 3px;
-    right: 3px;
-}
-
-.item-page-actors {
-  margin-top: 20px;
 }
 
 .actor-name {

@@ -27,6 +27,7 @@ const ItemDetails = (props) => {
   }
 
   const displaySeasonsAndAiredYears = () => {
+    console.log(props);
     return (
       props.first_air_date.slice(0, 4) === props.last_air_date.slice(0, 4) && props.number_of_seasons < 2 ? (
         <IonText>{props.number_of_seasons + " Season " + props.last_air_date.slice(0, 4)} </IonText>
@@ -91,8 +92,10 @@ const ItemDetails = (props) => {
                   <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
                 </IonCol>
                 <IonCol size="8">
-                  <IonText className="item-page-text">{props.overview}</IonText>
-                  <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
+                  <div className="item-page-description">
+                  <IonText className="item-page-description">{props.overview}</IonText>
+                  </div>
+                  <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show Description</IonButton>
                 </IonCol>
               </IonRow>
               <IonRow>
