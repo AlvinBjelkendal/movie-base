@@ -1,10 +1,12 @@
-import { IonHeader, IonToolbar, IonSearchbar, IonIcon, IonContent, IonList, IonItem, IonLabel, IonPopover, IonLoading, IonListHeader } from "@ionic/react";
+import { IonHeader, IonToolbar, IonSearchbar, IonIcon, IonContent, IonList, IonItem, IonLabel, IonImg, IonPopover, IonLoading, IonListHeader, IonAvatar } from "@ionic/react";
 import { React, useEffect, useState } from "react";
 import GenresList from "../Genres/GenresList";
 import useFetch from "../useFetch";
 import LoadingSpinner from "../LoadingSpinner";
 import Error from "../Error";
 import { filmOutline, tvOutline } from "ionicons/icons";
+import { img_300, posterPlaceholder } from "../../config/config";
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("")
@@ -25,9 +27,16 @@ const Search = () => {
             ) : (
               <div>
                 {movies.results.sort((a, b) => b.popularity - a.popularity).map((title) => (
-                  <IonItem key={title.id}>
-                    <IonLabel>{title.title || title.name}</IonLabel>
-                  </IonItem>
+                  <Link className="item-link" to={`/movie/${title.id}`}>
+                    <IonItem key={title.id}>
+                      {title.poster_path === null ? (
+                        <IonImg className="search-image" src={posterPlaceholder} alt="poster" />
+                      ) : (
+                        <IonImg alt="poster" className="search-image" src={`${img_300}/${title.poster_path}`}> </IonImg>
+                      )}
+                      <IonLabel>{title.title || title.name}</IonLabel>
+                    </IonItem>
+                  </Link>
                 ))}
               </div>
             )}
@@ -53,9 +62,16 @@ const Search = () => {
             ) : (
               <div>
                 {shows.results.sort((a, b) => b.popularity - a.popularity).map((title) => (
-                  <IonItem key={title.id}>
-                    <IonLabel>{title.title || title.name}</IonLabel>
-                  </IonItem>
+                  <Link className="item-link" to={`/tv/${title.id}`}>
+                    <IonItem key={title.id}>
+                      {title.poster_path === null ? (
+                        <IonImg className="search-image"src={posterPlaceholder} alt="poster" />
+                      ) : (
+                        <IonImg alt="poster" className="search-image" src={`${img_300}/${title.poster_path}`}> </IonImg>
+                      )}
+                      <IonLabel>{title.title || title.name}</IonLabel>
+                    </IonItem>
+                  </Link>
                 ))}
               </div>
             )}

@@ -40,7 +40,7 @@ const MyNavBar = () => {
         </IonRouterOutlet>
         {/*-- Tab bar --*/}
         <IonTabBar slot="bottom" className="tabBar">
-          <IonTabButton tab="home" href="/home" className="nav-button">
+          <IonTabButton tab="movies" href="/" className="nav-button">
             <IonIcon icon={filmOutline} />
             <IonLabel>Movies</IonLabel>
           </IonTabButton>

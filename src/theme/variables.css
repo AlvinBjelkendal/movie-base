@@ -338,6 +338,13 @@ display: -webkit-box;
   z-index: 5;
 }
 
+.search-image {
+  width: 40px;
+  border-radius: 5%;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
 .show-full-text {
   float: right;
   margin-top: 5px;
