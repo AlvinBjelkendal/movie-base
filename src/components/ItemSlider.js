@@ -33,7 +33,7 @@ const ItemSlider = (props) => {
   const recievedTitlesThroughProps = () => {
     return (
       <div className="slide">
-        {props.titles && props.titles.map((title) => (
+        {props.titles.sort((a, b) => b.popularity - a.popularity).map((title) => (
           <SwiperSlide key={title.id}>
             <ItemCard {...title} type={type} />
           </SwiperSlide>

@@ -50,7 +50,6 @@ const GenresList = (props) => {
             <div>
               {categoryList()}
             </div>
-
           )}
         </div>
       )}
