@@ -2,7 +2,7 @@ import { img_300 } from "../../config/config";
 import { IonText, IonRow, IonCol, IonButton, IonPopover, IonIcon } from "@ionic/react";
 import useFetch from "../useFetch";
 import { useParams } from "react-router";
-import { specific } from "../../config/config";
+import { specific, posterPlaceholder } from "../../config/config";
 import LoadingSpinner from "../LoadingSpinner";
 import ActorsSlider from "./ActorsSlider";
 import GenresSlider from "./GenresSlider";
@@ -18,22 +18,34 @@ const ItemDetails = (props) => {
 
   const displayReleaseDateAndRuntime = () => {
     return (
-      props.runtime % 60 === 0 ? (
-        <IonText>{props.release_date + " " + Math.floor(props.runtime / 60) + 'h'}</IonText>
-      ) : (
-        <IonText>{props.release_date + " " + Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min'}</IonText>
-      )
+      <div>
+        {props.runtime > 0 ? (
+          props.runtime % 60 === 0 ? (
+            <IonText>{props.release_date + " " + Math.floor(props.runtime / 60) + 'h'}</IonText>
+          ) : (
+            <IonText>{props.release_date + " " + Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min'}</IonText>
+          )
+        ) : (
+          <IonText>{props.release_date}</IonText>
+        )}
+
+      </div>
     )
   }
 
   const displaySeasonsAndAiredYears = () => {
-    console.log(props);
     return (
-      props.first_air_date.slice(0, 4) === props.last_air_date.slice(0, 4) && props.number_of_seasons < 2 ? (
-        <IonText>{props.number_of_seasons + " Season " + props.last_air_date.slice(0, 4)} </IonText>
-      ) : (
-        <IonText>{props.number_of_seasons + " Seasons " + props.first_air_date.slice(0, 4) + " - " + props.last_air_date.slice(0, 4)} </IonText>
-      )
+      <div>
+        {props.first_air_date ? (
+          props.first_air_date.slice(0, 4) === props.last_air_date.slice(0, 4) && props.number_of_seasons < 2 ? (
+            <IonText>{props.number_of_seasons + " Season " + props.last_air_date.slice(0, 4)} </IonText>
+          ) : (
+            <IonText>{props.number_of_seasons + " Seasons " + props.first_air_date.slice(0, 4) + " - " + props.last_air_date.slice(0, 4)} </IonText>
+          )
+        ) : (
+          <IonText>Not aired yet</IonText>
+        )}
+      </div>
     )
   }
 
@@ -89,7 +101,13 @@ const ItemDetails = (props) => {
 
               <IonRow>
                 <IonCol size="3.5">
-                  <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
+                  <div>
+                    {props.poster_path === null ? (
+                      <img className="item-page-poster" src={posterPlaceholder} alt="poster" />
+                    ) : (
+                      <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster" />
+                    )}
+                  </div>
                 </IonCol>
                 <IonCol size="8">
                   {props.overview ? (
@@ -114,8 +132,9 @@ const ItemDetails = (props) => {
             </div>
           )}
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   )
 };
 export default ItemDetails;

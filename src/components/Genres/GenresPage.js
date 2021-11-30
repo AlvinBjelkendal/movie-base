@@ -46,7 +46,13 @@ const GenresPage = () => {
               <LoadingSpinner />
             ) : (
               <div>
-                <ItemSlider title={`Top rated ${genre} titles`} titles={items.results.sort((a, b) => b.vote_average - a.vote_average)} />
+                {items.results.length > 0 ? (
+                  <div>
+                    <ItemSlider title={`Top rated ${genre} titles`} titles={items.results.sort((a, b) => b.vote_average - a.vote_average)} />
+                  </div>
+                ) : (
+                  null
+                )}
               </div>
             )}
           </div>

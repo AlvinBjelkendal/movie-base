@@ -22,7 +22,7 @@ const ItemTrailer = () => {
           ) : (
             <div>
               {trailer.results < 1 ? (
-                null
+                <BackButton />
               ) : (
                 <div>
                   <div className="trailer-back-button">

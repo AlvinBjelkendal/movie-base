@@ -27,7 +27,7 @@ const Search = () => {
             ) : (
               <div>
                 {movies.results.sort((a, b) => b.popularity - a.popularity).map((title) => (
-                  <Link className="item-link" to={`/movie/${title.id}`}>
+                  <Link key={title.id} className="item-link" to={`/movie/${title.id}`}>
                     <IonItem key={title.id}>
                       {title.poster_path === null ? (
                         <IonImg className="search-image" src={posterPlaceholder} alt="poster" />
@@ -63,7 +63,7 @@ const Search = () => {
             ) : (
               <div>
                 {shows.results.sort((a, b) => b.popularity - a.popularity).map((title) => (
-                  <Link className="item-link" to={`/tv/${title.id}`}>
+                  <Link key={title.id} className="item-link" to={`/tv/${title.id}`}>
                     <IonItem key={title.id}>
                       {title.poster_path === null ? (
                         <IonImg className="search-image"src={posterPlaceholder} alt="poster" />
