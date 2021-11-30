@@ -24,6 +24,16 @@ const ItemDetails = (props) => {
     )
   }
 
+  const displayAiredYears = () => {
+    return (
+      props.first_air_date.slice(0, 4) === props.last_air_date.slice(0, 4) && props.number_of_seasons < 2 ? (
+        <IonText>{props.number_of_seasons + " Season " + props.last_air_date.slice(0, 4)} </IonText>
+      ) : (
+        <IonText>{props.number_of_seasons + " Seasons " + props.first_air_date.slice(0, 4) + " - " + props.last_air_date.slice(0, 4)} </IonText>
+      )
+    )
+  }
+
   const movieDescriptionPopover = () => {
     return (
       <IonPopover
@@ -58,7 +68,7 @@ const ItemDetails = (props) => {
           <IonRow>
             <IonCol>
               {type === "movie" ? (<IonText>{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>) : (
-                <IonText>{props.number_of_seasons + " Seasons " + props.first_air_date.slice(0, 4) + " - " + props.last_air_date.slice(0, 4)} </IonText>
+                displayAiredYears()
               )}
             </IonCol>
             <IonCol size="6">
@@ -74,7 +84,7 @@ const ItemDetails = (props) => {
           </IonRow>
 
           <IonRow>
-            <IonCol>
+            <IonCol size="4">
               <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
             </IonCol>
             <IonCol size="9">

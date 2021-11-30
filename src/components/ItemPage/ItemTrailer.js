@@ -8,6 +8,7 @@ const ItemTrailer = () => {
   const { id } = useParams();
   const { type } = useParams();
   const { responseData: trailer, error, isLoading } = useFetch(`${specific}${type}/${id}/videos`);
+  console.log(trailer);
 
   return (
     <div>
@@ -16,8 +17,8 @@ const ItemTrailer = () => {
         <LoadingSpinner />
       ) : (
         <div>
-          {trailer.length === 0 ? (
-            <div></div>
+          {trailer.results < 1 ? (
+            null
             ) : (
               <ReactPlayer
               url={youtubeUrl + trailer.results[0].key}
