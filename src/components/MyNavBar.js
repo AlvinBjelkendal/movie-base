@@ -22,7 +22,7 @@ const MyNavBar = () => {
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/home">
+          <Route exact path="/">
             <MoviesHome />
           </Route>
           <Route path="/tv">
@@ -36,9 +36,6 @@ const MyNavBar = () => {
           </Route>
           <Route exact path="/:type/genre/:genre/:id">
             <GenrePage />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/home" />
           </Route>
         </IonRouterOutlet>
         {/*-- Tab bar --*/}
