@@ -6,6 +6,7 @@ import { specific } from "../../config/config";
 import LoadingSpinner from "../LoadingSpinner";
 import ItemTrailer from "./ItemTrailer";
 import ItemDetails from "./ItemDetails";
+import Error from "../Error";
 
 const ItemPage = () => {
   const { id } = useParams();
@@ -15,13 +16,18 @@ const ItemPage = () => {
 
   return (
     <IonContent className="item-page">
-      {error && <div>{error}</div>}
-      {isLoading ? (
-        <LoadingSpinner />
+      {error !== null ? (
+        <Error />
       ) : (
         <div>
-          <ItemTrailer {...item} />
-          <ItemDetails {...item} />
+          {isLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <div>
+              <ItemTrailer {...item} />
+              <ItemDetails {...item} />
+            </div>
+          )}
         </div>
       )}
     </IonContent>

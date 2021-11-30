@@ -13,16 +13,21 @@ const GenrePage = () => {
   const { genre } = useParams();
   const { responseData: items, error, isLoading } = useFetch(`${discover}${type}?&with_genres=${id}`);
   console.log(error);
-  
+
 
   return (
     <IonContent>
-      {error && console.log('fsaf')}
-      {isLoading ? (
-        <LoadingSpinner />
+      {error !== null ? (
+        <Error />
       ) : (
         <div>
-          <ItemSlider title={`Popular ${genre} titles`} titles={items.results} />
+          {isLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <div>
+              <ItemSlider title={`Popular ${genre} titles`} titles={items.results} />
+            </div>
+          )}
         </div>
       )}
     </IonContent>

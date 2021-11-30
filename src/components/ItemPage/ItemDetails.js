@@ -8,6 +8,7 @@ import ActorsSlider from "./ActorsSlider";
 import GenresSlider from "./GenresSlider";
 import { useState } from "react";
 import { closeOutline, star } from "ionicons/icons";
+import Error from "../Error";
 
 const ItemDetails = (props) => {
   const { id } = useParams();
@@ -54,48 +55,53 @@ const ItemDetails = (props) => {
 
   return (
     <div>
-      {error && <div>{error}</div>}
-      {isLoading ? (
-        <LoadingSpinner />
+      {error !== null ? (
+        <Error />
       ) : (
         <div>
-          {movieDescriptionPopover()}
-          <IonRow>
-            <IonCol className="ion-align-items-start">
-              <h4>{props.title}</h4>
-            </IonCol>
-          </IonRow>
+          {isLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <div>
+              {movieDescriptionPopover()}
+              <IonRow>
+                <IonCol className="ion-align-items-start">
+                  <h4>{props.title}</h4>
+                </IonCol>
+              </IonRow>
 
-          <IonRow>
-            <IonCol>
-              {type === "movie" ? (displayReleaseDateAndRuntime()) : (displaySeasonsAndAiredYears())}
-            </IonCol>
-            <IonCol size="6">
-              {GenresSlider(props.genres)}
-            </IonCol>
-          </IonRow>
+              <IonRow>
+                <IonCol>
+                  {type === "movie" ? (displayReleaseDateAndRuntime()) : (displaySeasonsAndAiredYears())}
+                </IonCol>
+                <IonCol size="6">
+                  {GenresSlider(props.genres)}
+                </IonCol>
+              </IonRow>
 
-          <IonRow>
-            <IonCol>
-              <IonIcon className="icon" icon={star} color="warning"></IonIcon>
-              <IonText>{`${props.vote_average}/10`}</IonText>
-            </IonCol>
-          </IonRow>
+              <IonRow>
+                <IonCol>
+                  <IonIcon className="icon" icon={star} color="warning"></IonIcon>
+                  <IonText>{`${props.vote_average}/10`}</IonText>
+                </IonCol>
+              </IonRow>
 
-          <IonRow>
-            <IonCol size="4">
-              <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
-            </IonCol>
-            <IonCol size="8">
-              <IonText className="item-page-text">{props.overview}</IonText>
-              <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <ActorsSlider {...credits} />
-            </IonCol>
-          </IonRow>
+              <IonRow>
+                <IonCol size="3.5">
+                  <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
+                </IonCol>
+                <IonCol size="8">
+                  <IonText className="item-page-text">{props.overview}</IonText>
+                  <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol>
+                  <ActorsSlider {...credits} />
+                </IonCol>
+              </IonRow>
+            </div>
+          )}
         </div>
       )}
     </div>

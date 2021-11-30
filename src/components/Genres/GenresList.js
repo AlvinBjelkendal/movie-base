@@ -4,6 +4,7 @@ import { category } from "../../config/config";
 import useFetch from "../useFetch";
 import LoadingSpinner from "../LoadingSpinner";
 import { Link } from "react-router-dom";
+import Error from "../Error";
 
 const GenresList = (props) => {
   const { responseData: genres, error, isLoading } = useFetch(`${category}/${props.type}/list`);
@@ -39,15 +40,21 @@ const GenresList = (props) => {
   }
   return (
     <div>
-      {error && <div>{error}</div>}
-      {isLoading ? (
-        <LoadingSpinner />
+      {error !== null ? (
+        <Error />
       ) : (
         <div>
-          {categoryList()}
-        </div>
+          {isLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <div>
+              {categoryList()}
+            </div>
 
+          )}
+        </div>
       )}
+
     </div>
   )
 }; export default GenresList;
