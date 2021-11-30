@@ -5,9 +5,10 @@ import { IonContent } from "@ionic/react";
 import ItemSlider from "../ItemSlider";
 import LoadingSpinner from "../LoadingSpinner";
 import Error from "../Error";
+import { BackButton } from "../BackButton";
 
 
-const GenrePage = () => {
+const GenresPage = () => {
   const { type } = useParams();
   const { id } = useParams();
   const { genre } = useParams();
@@ -17,14 +18,15 @@ const GenrePage = () => {
 
   return (
     <IonContent>
+      <BackButton />
       {error !== null ? (
         <Error />
-      ) : (
-        <div>
+        ) : (
+          <div>
           {isLoading ? (
             <LoadingSpinner />
-          ) : (
-            <div>
+            ) : (
+              <div>
               <ItemSlider title={`Popular ${genre} titles`} titles={items.results} />
             </div>
           )}
@@ -32,4 +34,4 @@ const GenrePage = () => {
       )}
     </IonContent>
   )
-}; export default GenrePage
+}; export default GenresPage

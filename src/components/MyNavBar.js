@@ -15,14 +15,14 @@ import MoviesHome from "./MainPages/MoviesHome";
 import ItemPage from "./ItemPage/ItemPage";
 import TvShowsHome from "./MainPages/TvShowsHome";
 import Search from "./MainPages/Search";
-import GenrePage from "./Genres/GenrePage";
+import GenrePage from "./Genres/GenresPage";
 
 const MyNavBar = () => {
   return (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/">
+          <Route exact path="/home">
             <MoviesHome />
           </Route>
           <Route path="/tv">
@@ -37,10 +37,13 @@ const MyNavBar = () => {
           <Route exact path="/:type/genre/:genre/:id">
             <GenrePage />
           </Route>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
         </IonRouterOutlet>
         {/*-- Tab bar --*/}
         <IonTabBar slot="bottom" className="tabBar">
-          <IonTabButton tab="movies" href="/" className="nav-button">
+          <IonTabButton tab="movies" href="/home" className="nav-button">
             <IonIcon icon={filmOutline} />
             <IonLabel>Movies</IonLabel>
           </IonTabButton>

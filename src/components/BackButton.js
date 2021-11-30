@@ -6,7 +6,7 @@ export const BackButton = () => {
   const history = useHistory()
 
   return (
-    <IonButton className="back-button" size="small" fill="clear" onClick={() => history.goBack()}>
+    <IonButton color="warning" className="back-button" fill="clear" onClick={() => history.goBack()}>
       <IonIcon icon={chevronBackOutline}  ></IonIcon>
     </IonButton>
   )
