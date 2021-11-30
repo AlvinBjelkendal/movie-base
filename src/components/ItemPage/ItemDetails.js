@@ -15,16 +15,17 @@ const ItemDetails = (props) => {
   const [showPopover, setShowPopover] = useState(false);
   const { responseData: credits, error, isLoading } = useFetch(`${specific}${type}/${id}/credits`);
 
-  const displayRuntimeInHoursAndMin = () => {
+  const displayReleaseDateAndRuntime = () => {
     return (
       props.runtime % 60 === 0 ? (
-        Math.floor(props.runtime / 60) + 'h'
-      ) : (Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min'
+        <IonText>{props.release_date + " " + Math.floor(props.runtime / 60) + 'h'}</IonText>
+      ) : (
+        <IonText>{props.release_date + " " + Math.floor(props.runtime / 60) + 'h ' + props.runtime % 60 + 'min'}</IonText>
       )
     )
   }
 
-  const displayAiredYears = () => {
+  const displaySeasonsAndAiredYears = () => {
     return (
       props.first_air_date.slice(0, 4) === props.last_air_date.slice(0, 4) && props.number_of_seasons < 2 ? (
         <IonText>{props.number_of_seasons + " Season " + props.last_air_date.slice(0, 4)} </IonText>
@@ -67,9 +68,7 @@ const ItemDetails = (props) => {
 
           <IonRow>
             <IonCol>
-              {type === "movie" ? (<IonText>{props.release_date + " " + displayRuntimeInHoursAndMin()}</IonText>) : (
-                displayAiredYears()
-              )}
+              {type === "movie" ? (displayReleaseDateAndRuntime()) : (displaySeasonsAndAiredYears())}
             </IonCol>
             <IonCol size="6">
               {GenresSlider(props.genres)}
@@ -87,7 +86,7 @@ const ItemDetails = (props) => {
             <IonCol size="4">
               <img className="item-page-poster" src={`${img_300}/${props.poster_path}`} alt="poster"></img>
             </IonCol>
-            <IonCol size="9">
+            <IonCol size="8">
               <IonText className="item-page-text">{props.overview}</IonText>
               <IonButton onClick={() => setShowPopover(true)} fill="clear" size="small" className="show-full-text">Show more..</IonButton>
             </IonCol>
