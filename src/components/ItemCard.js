@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const ItemCard = (props) => {
   return (
     <IonCard className="item-card">
-
       <Link className="item-link" to={`/${props.type}/${props.id}`}>
         {props.poster_path === null ? (
           <IonImg src={posterPlaceholder} alt="poster" />

@@ -15,7 +15,7 @@ import MoviesHome from "./MainPages/MoviesHome";
 import ItemPage from "./ItemPage/ItemPage";
 import TvShowsHome from "./MainPages/TvShowsHome";
 import Search from "./MainPages/Search";
-import GenrePage from "./Genres/GenresPage";
+import GenresPage from "./Genres/GenresPage";
 
 const MyNavBar = () => {
   return (
@@ -35,7 +35,7 @@ const MyNavBar = () => {
             <Search />
           </Route>
           <Route exact path="/:type/genre/:genre/:id">
-            <GenrePage />
+            <GenresPage />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
