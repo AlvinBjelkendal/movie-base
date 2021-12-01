@@ -1,5 +1,5 @@
-import { IonHeader, IonToolbar, IonSearchbar, IonIcon, IonContent, IonList, IonItem, IonLabel, IonImg, IonPopover, IonLoading, IonListHeader, IonAvatar } from "@ionic/react";
-import { React, useEffect, useState } from "react";
+import { IonHeader, IonToolbar, IonSearchbar, IonIcon, IonContent, IonList, IonItem, IonLabel, IonImg, IonListHeader } from "@ionic/react";
+import { React, useState } from "react";
 import GenresList from "../Genres/GenresList";
 import useFetch from "../useFetch";
 import LoadingSpinner from "../LoadingSpinner";
@@ -66,7 +66,7 @@ const Search = () => {
                   <Link key={title.id} className="item-link" to={`/tv/${title.id}`}>
                     <IonItem key={title.id}>
                       {title.poster_path === null ? (
-                        <IonImg className="search-image"src={posterPlaceholder} alt="poster" />
+                        <IonImg className="search-image" src={posterPlaceholder} alt="poster" />
                       ) : (
                         <IonImg alt="poster" className="search-image" src={`${img_300}/${title.poster_path}`}> </IonImg>
                       )}

@@ -1,5 +1,5 @@
 import { IonList, IonItem, IonIcon, IonLabel, IonListHeader } from "@ionic/react";
-import { chevronForwardOutline, filmOutline, key, tvOutline } from "ionicons/icons";
+import { chevronForwardOutline, filmOutline, tvOutline } from "ionicons/icons";
 import { category } from "../../config/config";
 import useFetch from "../useFetch";
 import LoadingSpinner from "../LoadingSpinner";
@@ -23,7 +23,6 @@ const GenresList = (props) => {
               <IonIcon color="warning" className="icon" icon={tvOutline}></IonIcon>
               TV-Shows</IonListHeader>
           )
-
           }
           {genres.genres.map((genre) => (
             <Link key={genre.id} className="item-link" to={`/${props.type}/genre/${genre.name}/${genre.id}`}>
