@@ -1,16 +1,16 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
-import useFetch from './useFetch';
-import ItemCard from './ItemCard';
+import useFetch from '../useFetch';
+import TitleCard from './TitleCard';
 
 import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from '../LoadingSpinner';
 import { IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
-import { BackButton } from './BackButton';
+import { BackButton } from '../BackButton';
 
-const ItemSlider = (props) => {
+const TitlesSlider = (props) => {
   const { type } = useParams()
 
   const FetchTitles = () => {
@@ -23,7 +23,7 @@ const ItemSlider = (props) => {
         ) : (
           items && items.results.map((title) => (
             <SwiperSlide key={title.id}>
-              <ItemCard {...title} type={props.type} />
+              <TitleCard {...title} type={props.type} />
             </SwiperSlide>
           ))
         )}
@@ -36,7 +36,7 @@ const ItemSlider = (props) => {
       <div className="slide">
         {props.titles.map((title) => (
           <SwiperSlide key={title.id}>
-            <ItemCard {...title} type={type} />
+            <TitleCard {...title} type={type} />
           </SwiperSlide>
         ))}
       </div>
@@ -54,4 +54,4 @@ const ItemSlider = (props) => {
     </div>
   );
 };
-export default ItemSlider;
+export default TitlesSlider;

@@ -1,9 +1,9 @@
 import { IonCard, IonText, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon, IonImg } from "@ionic/react";
 import { star } from "ionicons/icons";
-import { posterPlaceholder, img_300 } from "../config/config";
+import { posterPlaceholder, img_300 } from "../../config/config";
 import { Link } from "react-router-dom";
 
-const ItemCard = (props) => {
+const TitleCard = (props) => {
   return (
     <IonCard className="item-card">
       <Link className="item-link" to={`/${props.type}/${props.id}`}>
@@ -26,4 +26,4 @@ const ItemCard = (props) => {
   )
 };
 
-export default ItemCard;
+export default TitleCard;

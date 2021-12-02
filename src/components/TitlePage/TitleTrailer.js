@@ -6,7 +6,7 @@ import LoadingSpinner from "../LoadingSpinner";
 import Error from "../Error";
 import { BackButton } from "../BackButton";
 
-const ItemTrailer = () => {
+const TitleTrailer = () => {
   const { id } = useParams();
   const { type } = useParams();
   const { responseData: trailer, error, isLoading } = useFetch(`${specific}${type}/${id}/videos`);
@@ -44,4 +44,4 @@ const ItemTrailer = () => {
 
   )
 };
-export default ItemTrailer;
+export default TitleTrailer;

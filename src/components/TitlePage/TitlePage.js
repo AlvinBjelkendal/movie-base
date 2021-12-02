@@ -3,11 +3,11 @@ import useFetch from "../useFetch";
 import { useParams } from "react-router-dom";
 import { specific } from "../../config/config";
 import LoadingSpinner from "../LoadingSpinner";
-import ItemTrailer from "./ItemTrailer";
-import ItemDetails from "./ItemDetails";
+import TitleTrailer from "./TitleTrailer";
+import ItemDetails from "./TitleDetails";
 import Error from "../Error";
 
-const ItemPage = () => {
+const TitlePage = () => {
   const { id } = useParams();
   const { type } = useParams();
   const { responseData: item, error, isLoading } = useFetch(`${specific}${type}/${id}`);
@@ -22,7 +22,7 @@ const ItemPage = () => {
             <LoadingSpinner />
           ) : (
             <div>
-              <ItemTrailer {...item} />
+              <TitleTrailer {...item} />
               <ItemDetails {...item} />
             </div>
           )}
@@ -31,4 +31,4 @@ const ItemPage = () => {
     </IonContent>
   )
 };
-export default ItemPage;
+export default TitlePage;

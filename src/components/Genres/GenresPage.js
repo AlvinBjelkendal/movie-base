@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { discover } from "../../config/config";
 import useFetch from "../useFetch";
 import { IonContent, IonHeader, IonTitle, IonToolbar } from "@ionic/react";
-import ItemSlider from "../ItemSlider";
+import TitlesSlider from "../TitlesSlider/TitlesSlider";
 import LoadingSpinner from "../LoadingSpinner";
 import Error from "../Error";
 import { BackButton } from "../BackButton";
@@ -25,7 +25,7 @@ const GenresPage = () => {
               <LoadingSpinner />
             ) : (
               <div>
-                <ItemSlider title={`Popular ${genre} Titles`} titles={items.results.sort((a, b) => b.popularity - a.popularity)} />
+                <TitlesSlider title={`Popular ${genre} Titles`} titles={items.results.sort((a, b) => b.popularity - a.popularity)} />
               </div>
             )}
           </div>
@@ -48,7 +48,7 @@ const GenresPage = () => {
               <div>
                 {items.results.length > 0 ? (
                   <div>
-                    <ItemSlider title={`Top Rated ${genre} Titles`} titles={items.results.sort((a, b) => b.vote_average - a.vote_average)} />
+                    <TitlesSlider title={`Top Rated ${genre} Titles`} titles={items.results.sort((a, b) => b.vote_average - a.vote_average)} />
                   </div>
                 ) : (
                   null

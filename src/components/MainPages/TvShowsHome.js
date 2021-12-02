@@ -1,12 +1,12 @@
 import { IonContent } from "@ionic/react";
 import { popularTVShows, topRatedTVShows } from "../../config/config";
-import ItemSlider from "../ItemSlider";
+import TitlesSlider from "../TitlesSlider/TitlesSlider";
 
 const TvShowsHome = () => {
   return (
     <IonContent>
-      <ItemSlider title={"Popular Right Now"} category={popularTVShows} type="tv" />
-      <ItemSlider title={"Top Rated"} category={topRatedTVShows} type="tv" />
+      <TitlesSlider title={"Popular Right Now"} category={popularTVShows} type="tv" />
+      <TitlesSlider title={"Top Rated"} category={topRatedTVShows} type="tv" />
     </IonContent>
   )
 };

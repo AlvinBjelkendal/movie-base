@@ -10,7 +10,7 @@ import { useState } from "react";
 import { closeOutline, star } from "ionicons/icons";
 import Error from "../Error";
 
-const ItemDetails = (props) => {
+const TitleDetails = (props) => {
   const { id } = useParams();
   const { type } = useParams();
   const [showPopover, setShowPopover] = useState(false);
@@ -137,4 +137,4 @@ const ItemDetails = (props) => {
     </div >
   )
 };
-export default ItemDetails;
+export default TitleDetails;
