@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { specific } from "../../config/config";
 import LoadingSpinner from "../LoadingSpinner";
 import TitleTrailer from "./TitleTrailer";
-import ItemDetails from "./TitleDetails";
+import TitleDetails from "./TitleDetails";
 import Error from "../Error";
 
 const TitlePage = () => {
@@ -23,7 +23,7 @@ const TitlePage = () => {
           ) : (
             <div>
               <TitleTrailer {...item} />
-              <ItemDetails {...item} />
+              <TitleDetails {...item} />
             </div>
           )}
         </div>

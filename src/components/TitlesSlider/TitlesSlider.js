@@ -6,9 +6,8 @@ import TitleCard from './TitleCard';
 import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 import LoadingSpinner from '../LoadingSpinner';
-import { IonTitle, IonToolbar } from '@ionic/react';
+import { IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
-import { BackButton } from '../BackButton';
 
 const TitlesSlider = (props) => {
   const { type } = useParams()
